@@ -1,6 +1,6 @@
 ﻿namespace SchoolManager
 {
-    partial class SchoolmanagerMainMenu
+    partial class SchülerInterface
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SchoolmanagerMainMenu));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LehrerInterface));
             this.panel1 = new System.Windows.Forms.Panel();
             this.XExitbtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,8 +44,6 @@
             this.MainMenuNavAbsenz = new System.Windows.Forms.Button();
             this.ExitBTN = new System.Windows.Forms.Button();
             this.IchTableManager = new System.Windows.Forms.TableLayoutPanel();
-            this.MainIchHausnum = new System.Windows.Forms.Label();
-            this.Hausnumlbl = new System.Windows.Forms.Label();
             this.MainIchStrasse = new System.Windows.Forms.Label();
             this.Strasselbl = new System.Windows.Forms.Label();
             this.MainIchOrt = new System.Windows.Forms.Label();
@@ -65,6 +63,8 @@
             this.MainIchEmail = new System.Windows.Forms.Label();
             this.EmailLBL = new System.Windows.Forms.Label();
             this.SidebarTimer = new System.Windows.Forms.Timer(this.components);
+            this.label2 = new System.Windows.Forms.Label();
+            this.MainIchTel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MenuIcon)).BeginInit();
             this.SideBarContainer.SuspendLayout();
@@ -134,7 +134,6 @@
             this.SideBarContainer.Name = "SideBarContainer";
             this.SideBarContainer.Size = new System.Drawing.Size(87, 777);
             this.SideBarContainer.TabIndex = 1;
-            this.SideBarContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // MainMenuNavIch
             // 
@@ -268,8 +267,8 @@
             this.IchTableManager.ColumnCount = 2;
             this.IchTableManager.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.33464F));
             this.IchTableManager.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.66536F));
-            this.IchTableManager.Controls.Add(this.MainIchHausnum, 1, 9);
-            this.IchTableManager.Controls.Add(this.Hausnumlbl, 0, 9);
+            this.IchTableManager.Controls.Add(this.MainIchTel, 1, 9);
+            this.IchTableManager.Controls.Add(this.label2, 0, 9);
             this.IchTableManager.Controls.Add(this.MainIchStrasse, 1, 8);
             this.IchTableManager.Controls.Add(this.Strasselbl, 0, 8);
             this.IchTableManager.Controls.Add(this.MainIchOrt, 1, 7);
@@ -301,41 +300,17 @@
             this.IchTableManager.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.IchTableManager.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.IchTableManager.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.IchTableManager.Size = new System.Drawing.Size(708, 426);
+            this.IchTableManager.Size = new System.Drawing.Size(749, 426);
             this.IchTableManager.TabIndex = 2;
-            this.IchTableManager.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
-            // 
-            // MainIchHausnum
-            // 
-            this.MainIchHausnum.AutoSize = true;
-            this.MainIchHausnum.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainIchHausnum.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MainIchHausnum.Location = new System.Drawing.Point(283, 380);
-            this.MainIchHausnum.Name = "MainIchHausnum";
-            this.MainIchHausnum.Size = new System.Drawing.Size(420, 44);
-            this.MainIchHausnum.TabIndex = 19;
-            this.MainIchHausnum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Hausnumlbl
-            // 
-            this.Hausnumlbl.AutoSize = true;
-            this.Hausnumlbl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Hausnumlbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Hausnumlbl.Location = new System.Drawing.Point(5, 380);
-            this.Hausnumlbl.Name = "Hausnumlbl";
-            this.Hausnumlbl.Size = new System.Drawing.Size(270, 44);
-            this.Hausnumlbl.TabIndex = 18;
-            this.Hausnumlbl.Text = "Hausnummer";
-            this.Hausnumlbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainIchStrasse
             // 
             this.MainIchStrasse.AutoSize = true;
             this.MainIchStrasse.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainIchStrasse.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MainIchStrasse.Location = new System.Drawing.Point(283, 338);
+            this.MainIchStrasse.Location = new System.Drawing.Point(299, 338);
             this.MainIchStrasse.Name = "MainIchStrasse";
-            this.MainIchStrasse.Size = new System.Drawing.Size(420, 40);
+            this.MainIchStrasse.Size = new System.Drawing.Size(445, 40);
             this.MainIchStrasse.TabIndex = 17;
             this.MainIchStrasse.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -346,7 +321,7 @@
             this.Strasselbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Strasselbl.Location = new System.Drawing.Point(5, 338);
             this.Strasselbl.Name = "Strasselbl";
-            this.Strasselbl.Size = new System.Drawing.Size(270, 40);
+            this.Strasselbl.Size = new System.Drawing.Size(286, 40);
             this.Strasselbl.TabIndex = 16;
             this.Strasselbl.Text = "Strasse";
             this.Strasselbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -356,9 +331,9 @@
             this.MainIchOrt.AutoSize = true;
             this.MainIchOrt.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainIchOrt.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MainIchOrt.Location = new System.Drawing.Point(283, 296);
+            this.MainIchOrt.Location = new System.Drawing.Point(299, 296);
             this.MainIchOrt.Name = "MainIchOrt";
-            this.MainIchOrt.Size = new System.Drawing.Size(420, 40);
+            this.MainIchOrt.Size = new System.Drawing.Size(445, 40);
             this.MainIchOrt.TabIndex = 15;
             this.MainIchOrt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -369,7 +344,7 @@
             this.Ortlbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Ortlbl.Location = new System.Drawing.Point(5, 296);
             this.Ortlbl.Name = "Ortlbl";
-            this.Ortlbl.Size = new System.Drawing.Size(270, 40);
+            this.Ortlbl.Size = new System.Drawing.Size(286, 40);
             this.Ortlbl.TabIndex = 14;
             this.Ortlbl.Text = "Ort";
             this.Ortlbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -379,9 +354,9 @@
             this.MainIchPLZ.AutoSize = true;
             this.MainIchPLZ.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainIchPLZ.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MainIchPLZ.Location = new System.Drawing.Point(283, 254);
+            this.MainIchPLZ.Location = new System.Drawing.Point(299, 254);
             this.MainIchPLZ.Name = "MainIchPLZ";
-            this.MainIchPLZ.Size = new System.Drawing.Size(420, 40);
+            this.MainIchPLZ.Size = new System.Drawing.Size(445, 40);
             this.MainIchPLZ.TabIndex = 13;
             this.MainIchPLZ.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -392,7 +367,7 @@
             this.PLZlbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PLZlbl.Location = new System.Drawing.Point(5, 254);
             this.PLZlbl.Name = "PLZlbl";
-            this.PLZlbl.Size = new System.Drawing.Size(270, 40);
+            this.PLZlbl.Size = new System.Drawing.Size(286, 40);
             this.PLZlbl.TabIndex = 12;
             this.PLZlbl.Text = "Postleitzahl";
             this.PLZlbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -402,9 +377,9 @@
             this.MainIchKlasse.AutoSize = true;
             this.MainIchKlasse.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainIchKlasse.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MainIchKlasse.Location = new System.Drawing.Point(283, 212);
+            this.MainIchKlasse.Location = new System.Drawing.Point(299, 212);
             this.MainIchKlasse.Name = "MainIchKlasse";
-            this.MainIchKlasse.Size = new System.Drawing.Size(420, 40);
+            this.MainIchKlasse.Size = new System.Drawing.Size(445, 40);
             this.MainIchKlasse.TabIndex = 11;
             this.MainIchKlasse.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -415,7 +390,7 @@
             this.Klasselbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Klasselbl.Location = new System.Drawing.Point(5, 212);
             this.Klasselbl.Name = "Klasselbl";
-            this.Klasselbl.Size = new System.Drawing.Size(270, 40);
+            this.Klasselbl.Size = new System.Drawing.Size(286, 40);
             this.Klasselbl.TabIndex = 10;
             this.Klasselbl.Text = "Klasse";
             this.Klasselbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -425,9 +400,9 @@
             this.MainIchStufe.AutoSize = true;
             this.MainIchStufe.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainIchStufe.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MainIchStufe.Location = new System.Drawing.Point(283, 170);
+            this.MainIchStufe.Location = new System.Drawing.Point(299, 170);
             this.MainIchStufe.Name = "MainIchStufe";
-            this.MainIchStufe.Size = new System.Drawing.Size(420, 40);
+            this.MainIchStufe.Size = new System.Drawing.Size(445, 40);
             this.MainIchStufe.TabIndex = 9;
             this.MainIchStufe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -438,7 +413,7 @@
             this.Stufelbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Stufelbl.Location = new System.Drawing.Point(5, 170);
             this.Stufelbl.Name = "Stufelbl";
-            this.Stufelbl.Size = new System.Drawing.Size(270, 40);
+            this.Stufelbl.Size = new System.Drawing.Size(286, 40);
             this.Stufelbl.TabIndex = 8;
             this.Stufelbl.Text = "Stufe";
             this.Stufelbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -448,9 +423,9 @@
             this.MainIchGebDate.AutoSize = true;
             this.MainIchGebDate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainIchGebDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MainIchGebDate.Location = new System.Drawing.Point(283, 128);
+            this.MainIchGebDate.Location = new System.Drawing.Point(299, 128);
             this.MainIchGebDate.Name = "MainIchGebDate";
-            this.MainIchGebDate.Size = new System.Drawing.Size(420, 40);
+            this.MainIchGebDate.Size = new System.Drawing.Size(445, 40);
             this.MainIchGebDate.TabIndex = 7;
             this.MainIchGebDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -461,7 +436,7 @@
             this.Gebdatelbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Gebdatelbl.Location = new System.Drawing.Point(5, 128);
             this.Gebdatelbl.Name = "Gebdatelbl";
-            this.Gebdatelbl.Size = new System.Drawing.Size(270, 40);
+            this.Gebdatelbl.Size = new System.Drawing.Size(286, 40);
             this.Gebdatelbl.TabIndex = 6;
             this.Gebdatelbl.Text = "Geburtstags Datum";
             this.Gebdatelbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -471,9 +446,9 @@
             this.MainIchNachname.AutoSize = true;
             this.MainIchNachname.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainIchNachname.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MainIchNachname.Location = new System.Drawing.Point(283, 86);
+            this.MainIchNachname.Location = new System.Drawing.Point(299, 86);
             this.MainIchNachname.Name = "MainIchNachname";
-            this.MainIchNachname.Size = new System.Drawing.Size(420, 40);
+            this.MainIchNachname.Size = new System.Drawing.Size(445, 40);
             this.MainIchNachname.TabIndex = 5;
             this.MainIchNachname.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -484,7 +459,7 @@
             this.Nachnamelbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Nachnamelbl.Location = new System.Drawing.Point(5, 86);
             this.Nachnamelbl.Name = "Nachnamelbl";
-            this.Nachnamelbl.Size = new System.Drawing.Size(270, 40);
+            this.Nachnamelbl.Size = new System.Drawing.Size(286, 40);
             this.Nachnamelbl.TabIndex = 4;
             this.Nachnamelbl.Text = "Nachname";
             this.Nachnamelbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -494,12 +469,11 @@
             this.MainIchVorname.AutoSize = true;
             this.MainIchVorname.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainIchVorname.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MainIchVorname.Location = new System.Drawing.Point(283, 44);
+            this.MainIchVorname.Location = new System.Drawing.Point(299, 44);
             this.MainIchVorname.Name = "MainIchVorname";
-            this.MainIchVorname.Size = new System.Drawing.Size(420, 40);
+            this.MainIchVorname.Size = new System.Drawing.Size(445, 40);
             this.MainIchVorname.TabIndex = 3;
             this.MainIchVorname.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.MainIchVorname.Click += new System.EventHandler(this.label4_Click);
             // 
             // Vornamelbl
             // 
@@ -508,7 +482,7 @@
             this.Vornamelbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Vornamelbl.Location = new System.Drawing.Point(5, 44);
             this.Vornamelbl.Name = "Vornamelbl";
-            this.Vornamelbl.Size = new System.Drawing.Size(270, 40);
+            this.Vornamelbl.Size = new System.Drawing.Size(286, 40);
             this.Vornamelbl.TabIndex = 2;
             this.Vornamelbl.Text = "Vorname";
             this.Vornamelbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -518,9 +492,9 @@
             this.MainIchEmail.AutoSize = true;
             this.MainIchEmail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainIchEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MainIchEmail.Location = new System.Drawing.Point(283, 2);
+            this.MainIchEmail.Location = new System.Drawing.Point(299, 2);
             this.MainIchEmail.Name = "MainIchEmail";
-            this.MainIchEmail.Size = new System.Drawing.Size(420, 40);
+            this.MainIchEmail.Size = new System.Drawing.Size(445, 40);
             this.MainIchEmail.TabIndex = 1;
             this.MainIchEmail.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -531,7 +505,7 @@
             this.EmailLBL.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EmailLBL.Location = new System.Drawing.Point(5, 2);
             this.EmailLBL.Name = "EmailLBL";
-            this.EmailLBL.Size = new System.Drawing.Size(270, 40);
+            this.EmailLBL.Size = new System.Drawing.Size(286, 40);
             this.EmailLBL.TabIndex = 0;
             this.EmailLBL.Text = "Email";
             this.EmailLBL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -540,6 +514,29 @@
             // 
             this.SidebarTimer.Interval = 25;
             this.SidebarTimer.Tick += new System.EventHandler(this.Sidebartimer_Tick);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(5, 380);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(286, 44);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "Telefonnummer";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // MainIchTel
+            // 
+            this.MainIchTel.AutoSize = true;
+            this.MainIchTel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainIchTel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MainIchTel.Location = new System.Drawing.Point(299, 380);
+            this.MainIchTel.Name = "MainIchTel";
+            this.MainIchTel.Size = new System.Drawing.Size(445, 44);
+            this.MainIchTel.TabIndex = 22;
+            this.MainIchTel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // SchoolmanagerMainMenu
             // 
@@ -584,8 +581,6 @@
         private System.Windows.Forms.Button MainMenuNavDaten;
         private System.Windows.Forms.Button XExitbtn;
         private System.Windows.Forms.TableLayoutPanel IchTableManager;
-        private System.Windows.Forms.Label MainIchHausnum;
-        private System.Windows.Forms.Label Hausnumlbl;
         private System.Windows.Forms.Label MainIchStrasse;
         private System.Windows.Forms.Label Strasselbl;
         private System.Windows.Forms.Label MainIchOrt;
@@ -605,5 +600,7 @@
         private System.Windows.Forms.Label MainIchEmail;
         private System.Windows.Forms.Label EmailLBL;
         private System.Windows.Forms.Timer SidebarTimer;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label MainIchTel;
     }
 }

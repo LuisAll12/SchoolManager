@@ -40,6 +40,7 @@
             this.Showpassword_checkbox = new System.Windows.Forms.CheckBox();
             this.Exitbtn = new System.Windows.Forms.Button();
             this.AnmeldungClearBtn = new System.Windows.Forms.Button();
+            this.LehrerLogin = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // AnmeldungPasswortEing
@@ -50,6 +51,7 @@
             this.AnmeldungPasswortEing.PasswordChar = '*';
             this.AnmeldungPasswortEing.Size = new System.Drawing.Size(315, 40);
             this.AnmeldungPasswortEing.TabIndex = 2;
+            this.AnmeldungPasswortEing.Text = "12345678";
             // 
             // OnApply
             // 
@@ -94,6 +96,7 @@
             this.AnmeldungEmailEing.Name = "AnmeldungEmailEing";
             this.AnmeldungEmailEing.Size = new System.Drawing.Size(315, 40);
             this.AnmeldungEmailEing.TabIndex = 1;
+            this.AnmeldungEmailEing.Text = "Luis";
             // 
             // panel1
             // 
@@ -143,6 +146,15 @@
             this.AnmeldungClearBtn.UseVisualStyleBackColor = false;
             this.AnmeldungClearBtn.Click += new System.EventHandler(this.ClearAll);
             // 
+            // LehrerLogin
+            // 
+            this.LehrerLogin.AutoSize = true;
+            this.LehrerLogin.Location = new System.Drawing.Point(545, 355);
+            this.LehrerLogin.Name = "LehrerLogin";
+            this.LehrerLogin.Size = new System.Drawing.Size(272, 26);
+            this.LehrerLogin.TabIndex = 9;
+            this.LehrerLogin.Text = "Email=Test      Passw=Test1234";
+            // 
             // Anmeldung
             // 
             this.AcceptButton = this.OnApply;
@@ -152,6 +164,7 @@
             this.CancelButton = this.Exitbtn;
             this.ClientSize = new System.Drawing.Size(900, 619);
             this.ControlBox = false;
+            this.Controls.Add(this.LehrerLogin);
             this.Controls.Add(this.AnmeldungClearBtn);
             this.Controls.Add(this.Exitbtn);
             this.Controls.Add(this.Showpassword_checkbox);
@@ -189,6 +202,7 @@
         private System.Windows.Forms.CheckBox Showpassword_checkbox;
         private System.Windows.Forms.Button Exitbtn;
         private System.Windows.Forms.Button AnmeldungClearBtn;
+        private System.Windows.Forms.Label LehrerLogin;
     }
 }
 
