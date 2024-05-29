@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
+using System.Data.OleDb;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -11,7 +11,7 @@ namespace SchoolManager
     public class Benutzer
     {
         public static int _id;
-        public Benutzer(int id) { _id = id; LoadAll();  }
+        public Benutzer(int id) { _id = id; LoadAllSchueler();  }
         public string Username = string.Empty;
         public string Nachname = string.Empty;
         public string Vorname = string.Empty;
@@ -25,73 +25,51 @@ namespace SchoolManager
         public string Tel = string.Empty;
         public string Password = string.Empty;
         public int Berechtigung = 0;
+        public int FK_KLasse = 0;
         
 
         public string D23B = string.Empty;
 
-        public void LoadAll()
+        public void LoadAllSchueler()
         {
             //Herstellung einer Verbindung zwischen C# und Datenbank
-            string connectionString = "Server=DESKTOP-HU6ST2I\\SQLEXPRESS;Database=Schoolmanager;Integrated Security=True;";
             //Öffnet die Ergebnisse Schüler
-            string query = "select * from Schüler where SchülerID = @Value1";
+            string query = "select * from Schueler where SchuelerID = @Value1";
             var Value1 = _id;
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (OleDbConnection connection = new OleDbConnection(Program.connectionString))
 
             {
-                SqlCommand command = new SqlCommand(query, connection);
+                OleDbCommand command = new OleDbCommand(query, connection);
                 command.Parameters.AddWithValue("@Value1", Value1);
                 connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
+                OleDbDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
                     Username = reader.GetString(reader.GetOrdinal("Email"));
                     Password = reader.GetString(reader.GetOrdinal("Passwort"));
                     Vorname = reader.GetString(reader.GetOrdinal("Vorname"));
                     Nachname = reader.GetString(reader.GetOrdinal("Nachname"));
-                    Date = reader.GetDateTime(reader.GetOrdinal("GebDatum"));
+                    string Datestr = reader.GetString(reader.GetOrdinal("GebDatum"));
+                    Date = Convert.ToDateTime(Datestr);
                     Stufe = reader.GetString(reader.GetOrdinal("Stufe"));
                     Klasse = reader.GetString(reader.GetOrdinal("Klasse"));
                     Tel = reader.GetString(reader.GetOrdinal("Tel"));
                     Ort = reader.GetString(reader.GetOrdinal("Ort"));
                     PLZ = reader.GetInt32(reader.GetOrdinal("PLZ"));
                     Strasse = reader.GetString(reader.GetOrdinal("Strasse"));
-                    Hausnum = reader.GetInt32(reader.GetOrdinal("Hausnum"));
+                    Hausnum = reader.GetInt32(reader.GetOrdinal("Hausnummer"));
                     Berechtigung = reader.GetInt32(reader.GetOrdinal("Berechtigung"));
-
                 }
                 reader.Close();
                 connection.Close();
             }
-            
-            private void LoadD23B()
-            {
-                //Herstellung einer Verbindung zwischen C# und Datenbank
-                string connectionString = "Server=DESKTOP-HU6ST2I\\SQLEXPRESS;Database=Schoolmanager;Integrated Security=True;";
-                //Öffnet die Ergebnisse Schüler
-                string query = "select * from Schüler where SchülerID = @Value1";
-                var Value1 = _id;
 
-                using (SqlConnection connection = new SqlConnection(connectionString))
 
-                {
-                    SqlCommand command = new SqlCommand(query, connection);
-                    command.Parameters.AddWithValue("@Value1", Value1);
-                    connection.Open();
-                    SqlDataReader reader = command.ExecuteReader();
-                    while (reader.Read())
-                    {
-                     
-
-                    }
-                    reader.Close();
-                    connection.Close();
-
-                }
         }
 
-       
+
+
 
     }
 }

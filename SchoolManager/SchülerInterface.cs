@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace SchoolManager
 {
-    public partial class SchülerInterface : Form
+    public partial class SchuelerInterface : Form
     {
 
 
-        public SchülerInterface(Benutzer user)
+        public SchuelerInterface(Benutzer user)
         {
             InitializeComponent();
 

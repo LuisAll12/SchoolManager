@@ -1,6 +1,6 @@
 ﻿namespace SchoolManager
 {
-    partial class SchülerInterface
+    partial class SchuelerInterface
     {
         /// <summary>
         /// Required designer variable.

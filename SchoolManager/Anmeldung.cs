@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -45,7 +45,7 @@ namespace SchoolManager
                     if (user.Berechtigung == 1) 
                     { 
                         this.Hide();
-                        var form2 = new SchülerInterface(user);
+                        var form2 = new SchuelerInterface(user);
                         form2.Closed += (s, args) => this.Close();
                         form2.Show();
                     }
@@ -91,15 +91,14 @@ namespace SchoolManager
         private static int GetID(string username)
         {
             int id = 0;
-            string connectionString = "Server=DESKTOP-HU6ST2I\\SQLEXPRESS;Database=Schoolmanager;Integrated Security=True;";
-            string query = "select * from Schüler where Email = @Value1";
+            string query = "select * from Schueler where Email = @Value1";
             string Value = username;
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (OleDbConnection connection = new OleDbConnection(Program.connectionString))
             {
-                SqlCommand command = new SqlCommand(query, connection);
+                OleDbCommand command = new OleDbCommand(query, connection);
                 command.Parameters.AddWithValue("@Value1", Value);
                 connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
+                OleDbDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
                     id = reader.GetInt32(0);
