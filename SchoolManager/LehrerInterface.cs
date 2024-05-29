@@ -26,8 +26,7 @@ namespace SchoolManager
         }
         private void Klasse1(Benutzer user)
         {
-            MainIchKlasse1.Text = user.Stufe.ToString() + user.Klasse;
-            //MainIchKlasse1.Text = 
+            MainIchKlasse1.Text = user.FK_KLasse.ToString() + user.Klasse + " " + user.userId_Klasse1;
         }
 
 

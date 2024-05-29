@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.OleDb;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -11,7 +12,8 @@ namespace SchoolManager
     public class Benutzer
     {
         public static int _id;
-        public Benutzer(int id) { _id = id; LoadAllSchueler();  }
+        public Benutzer(int id) { _id = id; LoadAllSchueler(); LoadAllKlasse(); }
+        //Variabeln Schüler
         public string Username = string.Empty;
         public string Nachname = string.Empty;
         public string Vorname = string.Empty;
@@ -26,9 +28,13 @@ namespace SchoolManager
         public string Password = string.Empty;
         public int Berechtigung = 0;
         public int FK_KLasse = 0;
-        
+        //Variabeln Klasse
+        public int KlasseID = int.MinValue;
+        public string BezKlasse = string.Empty;
 
-        public string D23B = string.Empty;
+
+        public List<int> userId_Klasse1 = new List<int>();
+
 
         public void LoadAllSchueler()
         {
@@ -67,7 +73,40 @@ namespace SchoolManager
 
 
         }
+        public void LoadAllKlasse()
+        {
+            //Herstellung einer Verbindung zwischen C# und Datenbank
+            //Öffnet die Ergebnisse Schüler
+            string query = "SELECT UserId FROM Schueler WHERE foreign_key = @ForeignKey";
 
+            var ForeignKey = 1;
+
+            using (SqlConnection connection = new SqlConnection(Program.connectionString))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@ForeignKey", ForeignKey);
+
+                try
+                {
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        userId_Klasse1.Add(reader.GetInt32(reader.GetOrdinal("Fk_Klasse"))); // Annahme: user_id ist ein INT
+                    }
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("An error occurred: " + ex.Message);
+                }
+            }
+
+            // Ausgabe der abgerufenen Benutzer-IDs
+
+
+        }
 
 
 
