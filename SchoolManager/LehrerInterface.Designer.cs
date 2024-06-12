@@ -247,7 +247,7 @@
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.MainIchKlasse1, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(225, 89);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(322, 115);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 10;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
@@ -261,7 +261,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(854, 536);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(805, 536);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // label10
@@ -271,7 +271,7 @@
             this.label10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label10.Location = new System.Drawing.Point(3, 477);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(848, 59);
+            this.label10.Size = new System.Drawing.Size(799, 59);
             this.label10.TabIndex = 9;
             // 
             // label9
@@ -281,7 +281,7 @@
             this.label9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label9.Location = new System.Drawing.Point(3, 424);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(848, 53);
+            this.label9.Size = new System.Drawing.Size(799, 53);
             this.label9.TabIndex = 8;
             // 
             // label8
@@ -291,7 +291,7 @@
             this.label8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label8.Location = new System.Drawing.Point(3, 371);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(848, 53);
+            this.label8.Size = new System.Drawing.Size(799, 53);
             this.label8.TabIndex = 7;
             // 
             // label7
@@ -301,7 +301,7 @@
             this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label7.Location = new System.Drawing.Point(3, 318);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(848, 53);
+            this.label7.Size = new System.Drawing.Size(799, 53);
             this.label7.TabIndex = 6;
             // 
             // label6
@@ -311,7 +311,7 @@
             this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label6.Location = new System.Drawing.Point(3, 265);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(848, 53);
+            this.label6.Size = new System.Drawing.Size(799, 53);
             this.label6.TabIndex = 5;
             // 
             // label5
@@ -321,7 +321,7 @@
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label5.Location = new System.Drawing.Point(3, 212);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(848, 53);
+            this.label5.Size = new System.Drawing.Size(799, 53);
             this.label5.TabIndex = 4;
             // 
             // label4
@@ -331,7 +331,7 @@
             this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label4.Location = new System.Drawing.Point(3, 159);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(848, 53);
+            this.label4.Size = new System.Drawing.Size(799, 53);
             this.label4.TabIndex = 3;
             // 
             // label3
@@ -341,7 +341,7 @@
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label3.Location = new System.Drawing.Point(3, 106);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(848, 53);
+            this.label3.Size = new System.Drawing.Size(799, 53);
             this.label3.TabIndex = 2;
             // 
             // label2
@@ -351,7 +351,7 @@
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label2.Location = new System.Drawing.Point(3, 53);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(848, 53);
+            this.label2.Size = new System.Drawing.Size(799, 53);
             this.label2.TabIndex = 1;
             // 
             // MainIchKlasse1
@@ -361,7 +361,7 @@
             this.MainIchKlasse1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.MainIchKlasse1.Location = new System.Drawing.Point(3, 0);
             this.MainIchKlasse1.Name = "MainIchKlasse1";
-            this.MainIchKlasse1.Size = new System.Drawing.Size(848, 53);
+            this.MainIchKlasse1.Size = new System.Drawing.Size(799, 53);
             this.MainIchKlasse1.TabIndex = 0;
             this.MainIchKlasse1.Click += new System.EventHandler(this.Klasse1_Click);
             // 

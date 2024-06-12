@@ -6,29 +6,45 @@ using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.Remoting.Channels;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SchoolManager
-{
+{            
+
     public partial class LehrerInterface : Form
     {
-
+    string inklasse = string.Empty;
 
         public LehrerInterface(Benutzer user)
         {
             InitializeComponent();
+
+
+            
+            
+            inklasse = foreachKlasse(user);
             Klasse1(user);
-
-
 
         }
         private void Klasse1(Benutzer user)
         {
-            MainIchKlasse1.Text = user.FK_KLasse.ToString() + user.Klasse + " " + user.userId_Klasse1;
+            MainIchKlasse1.Text = user.FK_KLasse.ToString() + user.Klasse + " " + inklasse.ToString();
         }
+        private static string foreachKlasse(Benutzer user)
+        {
+            string klasse = string.Empty;
+            foreach(int I in user.userId_Klasse1)
+            {
 
+                Benutzer obj = new Benutzer(I);
+                klasse += obj.Vorname.ToString() + " " + obj.Nachname.ToString() + " ";
+
+            }
+            return klasse;
+        }
 
 
 

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.OleDb;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -77,23 +76,23 @@ namespace SchoolManager
         {
             //Herstellung einer Verbindung zwischen C# und Datenbank
             //Öffnet die Ergebnisse Schüler
-            string query = "SELECT UserId FROM Schueler WHERE foreign_key = @ForeignKey";
+            string query = "SELECT SchuelerID FROM Schueler WHERE FK_Klasse = @ForeignKey";
 
             var ForeignKey = 1;
 
-            using (SqlConnection connection = new SqlConnection(Program.connectionString))
+            using (OleDbConnection connection = new OleDbConnection(Program.connectionString))
             {
-                SqlCommand command = new SqlCommand(query, connection);
+                OleDbCommand command = new OleDbCommand(query, connection);
                 command.Parameters.AddWithValue("@ForeignKey", ForeignKey);
 
                 try
                 {
                     connection.Open();
-                    SqlDataReader reader = command.ExecuteReader();
+                    OleDbDataReader reader = command.ExecuteReader();
 
                     while (reader.Read())
                     {
-                        userId_Klasse1.Add(reader.GetInt32(reader.GetOrdinal("Fk_Klasse"))); // Annahme: user_id ist ein INT
+                        userId_Klasse1.Add(reader.GetInt32(reader.GetOrdinal("SchuelerID"))); // Annahme: user_id ist ein INT
                     }
                     reader.Close();
                 }
