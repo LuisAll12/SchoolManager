@@ -29,10 +29,13 @@ namespace SchoolManager
             MainIchOrt.Text = user.Ort;
             MainIchStrasse.Text = user.Strasse;
             MainIchTel.Text = user.Tel;
-
+            LoadStundenplan();
         }
 
+        private void LoadStundenplan()
+        {
 
+        }
 
 
         bool Sidebarexpand;

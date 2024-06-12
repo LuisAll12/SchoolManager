@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LehrerInterface));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SchuelerInterface));
             this.panel1 = new System.Windows.Forms.Panel();
             this.XExitbtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,6 +44,8 @@
             this.MainMenuNavAbsenz = new System.Windows.Forms.Button();
             this.ExitBTN = new System.Windows.Forms.Button();
             this.IchTableManager = new System.Windows.Forms.TableLayoutPanel();
+            this.MainIchTel = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.MainIchStrasse = new System.Windows.Forms.Label();
             this.Strasselbl = new System.Windows.Forms.Label();
             this.MainIchOrt = new System.Windows.Forms.Label();
@@ -63,13 +65,14 @@
             this.MainIchEmail = new System.Windows.Forms.Label();
             this.EmailLBL = new System.Windows.Forms.Label();
             this.SidebarTimer = new System.Windows.Forms.Timer(this.components);
-            this.label2 = new System.Windows.Forms.Label();
-            this.MainIchTel = new System.Windows.Forms.Label();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.StundenplanPB = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MenuIcon)).BeginInit();
             this.SideBarContainer.SuspendLayout();
             this.panel2.SuspendLayout();
             this.IchTableManager.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.StundenplanPB)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -303,6 +306,29 @@
             this.IchTableManager.Size = new System.Drawing.Size(749, 426);
             this.IchTableManager.TabIndex = 2;
             // 
+            // MainIchTel
+            // 
+            this.MainIchTel.AutoSize = true;
+            this.MainIchTel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainIchTel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MainIchTel.Location = new System.Drawing.Point(299, 380);
+            this.MainIchTel.Name = "MainIchTel";
+            this.MainIchTel.Size = new System.Drawing.Size(445, 44);
+            this.MainIchTel.TabIndex = 22;
+            this.MainIchTel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(5, 380);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(286, 44);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "Telefonnummer";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // MainIchStrasse
             // 
             this.MainIchStrasse.AutoSize = true;
@@ -515,43 +541,35 @@
             this.SidebarTimer.Interval = 25;
             this.SidebarTimer.Tick += new System.EventHandler(this.Sidebartimer_Tick);
             // 
-            // label2
+            // imageList1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(5, 380);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(286, 44);
-            this.label2.TabIndex = 21;
-            this.label2.Text = "Telefonnummer";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // MainIchTel
+            // StundenplanPB
             // 
-            this.MainIchTel.AutoSize = true;
-            this.MainIchTel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainIchTel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MainIchTel.Location = new System.Drawing.Point(299, 380);
-            this.MainIchTel.Name = "MainIchTel";
-            this.MainIchTel.Size = new System.Drawing.Size(445, 44);
-            this.MainIchTel.TabIndex = 22;
-            this.MainIchTel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.StundenplanPB.Location = new System.Drawing.Point(274, 132);
+            this.StundenplanPB.Name = "StundenplanPB";
+            this.StundenplanPB.Size = new System.Drawing.Size(791, 502);
+            this.StundenplanPB.TabIndex = 3;
+            this.StundenplanPB.TabStop = false;
             // 
-            // SchoolmanagerMainMenu
+            // SchuelerInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.GhostWhite;
             this.ClientSize = new System.Drawing.Size(1139, 820);
+            this.Controls.Add(this.StundenplanPB);
             this.Controls.Add(this.IchTableManager);
             this.Controls.Add(this.SideBarContainer);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(1599, 820);
-            this.Name = "SchoolmanagerMainMenu";
+            this.Name = "SchuelerInterface";
             this.Text = "SchoolManager";
             this.Load += new System.EventHandler(this.SchoolmanagerMainMenu_Load);
             this.panel1.ResumeLayout(false);
@@ -561,6 +579,7 @@
             this.panel2.ResumeLayout(false);
             this.IchTableManager.ResumeLayout(false);
             this.IchTableManager.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.StundenplanPB)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -602,5 +621,7 @@
         private System.Windows.Forms.Timer SidebarTimer;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label MainIchTel;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.PictureBox StundenplanPB;
     }
 }
