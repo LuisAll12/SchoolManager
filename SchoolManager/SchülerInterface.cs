@@ -27,14 +27,14 @@ namespace SchoolManager
             MainIchKlasse.Text = user.Klasse;
             MainIchPLZ.Text = user.PLZ.ToString();
             MainIchOrt.Text = user.Ort;
-            MainIchStrasse.Text = user.Strasse;
+            MainIchStrasse.Text = user.Strasse; 
             MainIchTel.Text = user.Tel;
-            LoadStundenplan();
+            StundenplanPB.Hide();
         }
 
         private void LoadStundenplan()
         {
-
+            
         }
 
 
@@ -94,6 +94,11 @@ namespace SchoolManager
         {
             //Entfernt alle Teilfenster
             IchTableManager.Hide();
+        }
+
+        private void MainMenuNavDaten_Click(object sender, EventArgs e)
+        {
+            LoadStundenplan();
         }
 
 
