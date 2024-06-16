@@ -30,11 +30,18 @@ namespace SchoolManager
             MainIchStrasse.Text = user.Strasse; 
             MainIchTel.Text = user.Tel;
             StundenplanPB.Hide();
+            LoadStundenplan(user);
+
         }
 
-        private void LoadStundenplan()
+        private void LoadStundenplan(Benutzer user)
         {
-            
+          int FK_Klasse = user.FK_KLasse;
+          Image Stundenplan = user.StundenplanBild;
+          //Stundenplan = Convert.
+          var bmp = (Bitmap)StundenplanPB.Image;
+          bmp = (Bitmap)Stundenplan;
+
         }
 
 
@@ -98,16 +105,23 @@ namespace SchoolManager
 
         private void MainMenuNavDaten_Click(object sender, EventArgs e)
         {
-            LoadStundenplan();
+          IchTableManager.Hide();
+          StundenplanPB.Show();
+            //KLasse
         }
 
-
-
-
-
-
-        //(IchTable) Informationen
-
+    private void IchTableManager_Paint(object sender, PaintEventArgs e)
+    {
 
     }
+
+
+
+
+
+
+    //(IchTable) Informationen
+
+
+  }
 }

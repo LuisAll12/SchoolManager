@@ -1,17 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.OleDb;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SchoolManager
 {
     public class Benutzer
     {
         public static int _id;
-        public Benutzer(int id) { _id = id; LoadAllSchueler(); LoadAllKlasse(); }
+        public Benutzer(int id) { _id = id; LoadAllSchueler(); LoadAllKlasse(); LoadKlasseStundenplan(); }
         //Variabeln Schüler
         public string Username = string.Empty;
         public string Nachname = string.Empty;
@@ -31,8 +34,12 @@ namespace SchoolManager
         public int KlasseID = int.MinValue;
         public string BezKlasse = string.Empty;
 
+        public Image StundenplanBild;
+
 
         public List<int> userId_Klasse1 = new List<int>();
+        
+        
 
 
         public void LoadAllSchueler()
@@ -109,8 +116,37 @@ namespace SchoolManager
 
 
         }
+    public void LoadKlasseStundenplan()
+    {
+      //Herstellung einer Verbindung zwischen C# und Datenbank
+      //Öffnet die Ergebnisse Schüler
+      string query = "select Stundenplan from Klasse where FK_Klasse = @Value1";
+      var Value1 = FK_KLasse;
 
+      using (OleDbConnection connection = new OleDbConnection(Program.connectionString))
+
+      {
+        OleDbCommand command = new OleDbCommand(query, connection);
+        command.Parameters.AddWithValue("@Value1", Value1);
+        connection.Open();
+        OleDbDataReader reader = command.ExecuteReader();
+        while (reader.Read())
+        {
+          Byte[] ImgBytes = (Byte[])reader[0];
+          int HeaderLen = ImgBytes[0];
+          Byte[] ImgArray = new Byte[ImgBytes.Length - HeaderLen];
+          Array.Copy(ImgBytes, HeaderLen, ImgArray, 0, ImgBytes.Length - HeaderLen);
+          MemoryStream MemStream = new MemoryStream(ImgArray);
+          StundenplanBild = new Bitmap(Bitmap.FromStream(MemStream));
+        }
+        reader.Close();
+        connection.Close();
+      }
 
 
     }
+
+
+
+  }
 }

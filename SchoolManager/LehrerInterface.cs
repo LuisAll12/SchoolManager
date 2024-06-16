@@ -31,7 +31,7 @@ namespace SchoolManager
         }
         private void Klasse1(Benutzer user)
         {
-            MainIchKlasse1.Text = user.FK_KLasse.ToString() + user.Klasse + " " + inklasse.ToString();
+            MainIchKlasse1.Text = user.Stufe.ToString() + user.Klasse + ": " + inklasse.ToString();
         }
         private static string foreachKlasse(Benutzer user)
         {
@@ -40,7 +40,7 @@ namespace SchoolManager
             {
 
                 Benutzer obj = new Benutzer(I);
-                klasse += obj.Vorname.ToString() + " " + obj.Nachname.ToString() + " ";
+                klasse += obj.Vorname.ToString() + " " + obj.Nachname.ToString() + ", ";
 
             }
             return klasse;
