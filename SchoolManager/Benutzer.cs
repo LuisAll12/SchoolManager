@@ -87,6 +87,7 @@ namespace SchoolManager
             //Herstellung einer Verbindung zwischen C# und Datenbank
             //Öffnet die Ergebnisse Schüler
             string query = "SELECT SchuelerID FROM Schueler WHERE FK_Klasse = @ForeignKey";
+            
 
             var ForeignKey = 1;
 
