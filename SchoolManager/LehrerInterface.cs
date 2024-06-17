@@ -28,8 +28,10 @@ namespace SchoolManager
             inklasse = foreachKlasse(user);
             Klasse1(user);
             LoadStundenplan(user);
+            
 
         }
+
         private void LoadStundenplan(Benutzer user)
         {
           int FK_Klasse = user.FK_KLasse;
@@ -151,10 +153,13 @@ namespace SchoolManager
             //KLasse
         }
 
-    private void OnNotenLoad_Click(object sender, EventArgs e)
-    {
 
-    }
+
+        private void openNoten(object sender, EventArgs e)
+        {
+          Noten form = new Noten();
+          form.Show();
+        }
 
 
 

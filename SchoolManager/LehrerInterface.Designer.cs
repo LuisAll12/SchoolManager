@@ -184,7 +184,7 @@
       this.MainMenuNavNoten.TabIndex = 2;
       this.MainMenuNavNoten.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
       this.MainMenuNavNoten.UseVisualStyleBackColor = false;
-      this.MainMenuNavNoten.Click += new System.EventHandler(this.OnNotenLoad_Click);
+      this.MainMenuNavNoten.Click += new System.EventHandler(this.openNoten);
       // 
       // MainMenuNavStundenplan
       // 

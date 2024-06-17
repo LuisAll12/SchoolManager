@@ -39,6 +39,7 @@
       this.Schueler_tbx = new System.Windows.Forms.TextBox();
       this.Apply_lbl = new System.Windows.Forms.Label();
       this.label1 = new System.Windows.Forms.Label();
+      this.Bestätigung_lbl = new System.Windows.Forms.Label();
       ((System.ComponentModel.ISupportInitialize)(this.LogoPB)).BeginInit();
       this.SuspendLayout();
       // 
@@ -164,11 +165,22 @@
       this.label1.Text = "Clear";
       this.label1.Click += new System.EventHandler(this.OnClear_Click);
       // 
+      // Bestätigung_lbl
+      // 
+      this.Bestätigung_lbl.AutoSize = true;
+      this.Bestätigung_lbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.Bestätigung_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.Bestätigung_lbl.Location = new System.Drawing.Point(520, 283);
+      this.Bestätigung_lbl.Name = "Bestätigung_lbl";
+      this.Bestätigung_lbl.Size = new System.Drawing.Size(0, 36);
+      this.Bestätigung_lbl.TabIndex = 11;
+      // 
       // Noten
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(800, 450);
+      this.Controls.Add(this.Bestätigung_lbl);
       this.Controls.Add(this.label1);
       this.Controls.Add(this.Apply_lbl);
       this.Controls.Add(this.Schueler_tbx);
@@ -202,5 +214,6 @@
     private System.Windows.Forms.TextBox Schueler_tbx;
     private System.Windows.Forms.Label Apply_lbl;
     private System.Windows.Forms.Label label1;
+    private System.Windows.Forms.Label Bestätigung_lbl;
   }
 }
