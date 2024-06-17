@@ -54,6 +54,8 @@
       this.X_Exit.Text = "X";
       this.X_Exit.UseVisualStyleBackColor = true;
       this.X_Exit.Click += new System.EventHandler(this.OnX_Click);
+      this.X_Exit.MouseLeave += new System.EventHandler(this.OnX_btn_Leave);
+      this.X_Exit.MouseHover += new System.EventHandler(this.OnX_btn_Hover);
       // 
       // Noten_lbl
       // 
@@ -121,6 +123,7 @@
       this.Fach_tbx.Name = "Fach_tbx";
       this.Fach_tbx.Size = new System.Drawing.Size(262, 39);
       this.Fach_tbx.TabIndex = 6;
+      this.Fach_tbx.Click += new System.EventHandler(this.On_Fach_tbx_Click);
       // 
       // Note_tbx
       // 
@@ -129,7 +132,8 @@
       this.Note_tbx.Name = "Note_tbx";
       this.Note_tbx.Size = new System.Drawing.Size(262, 39);
       this.Note_tbx.TabIndex = 7;
-      this.Note_tbx.Text = "0,0";
+      this.Note_tbx.Text = "1.0";
+      this.Note_tbx.Click += new System.EventHandler(this.On_Note_tbx_Click);
       // 
       // Schueler_tbx
       // 
@@ -139,7 +143,9 @@
       this.Schueler_tbx.Name = "Schueler_tbx";
       this.Schueler_tbx.Size = new System.Drawing.Size(262, 72);
       this.Schueler_tbx.TabIndex = 8;
-      this.Schueler_tbx.Text = "@sluz.ch\r\n\r\n";
+      this.Schueler_tbx.Text = "@sluz.ch";
+      this.Schueler_tbx.Click += new System.EventHandler(this.On_Email_tbx_Click);
+      this.Schueler_tbx.TextChanged += new System.EventHandler(this.Schueler_tbx_TextChanged);
       // 
       // Apply_lbl
       // 
@@ -181,10 +187,10 @@
       this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(800, 450);
+      this.Controls.Add(this.Schueler_tbx);
       this.Controls.Add(this.Bestätigung_lbl);
       this.Controls.Add(this.label1);
       this.Controls.Add(this.Apply_lbl);
-      this.Controls.Add(this.Schueler_tbx);
       this.Controls.Add(this.Note_tbx);
       this.Controls.Add(this.Fach_tbx);
       this.Controls.Add(this.Schüler_lbl);

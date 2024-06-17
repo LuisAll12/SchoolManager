@@ -32,8 +32,9 @@ namespace SchoolManager
 
     private void OnClear_Click(object sender, EventArgs e)
     {
-      Fach_tbx.Clear();
-      Note_tbx.Text = "0,0";
+      Fach_tbx.Text = "Deutsch";
+      Fach_tbx.ForeColor = Color.Gray;
+      Note_tbx.Text = "0.0";
       Schueler_tbx.Text = "@sluz.ch";
     }
 
@@ -46,45 +47,58 @@ namespace SchoolManager
 
 
       if (!Double.TryParse(Note_tbx.Text, out Note)) Note = double.NaN;
-
-      if (String.IsNullOrEmpty(Fach_tbx.Text)) ErrorMessage += "Es muss ein Fach eingegeben werden\n";
-      if (Double.IsNaN(Note)) ErrorMessage += "Es muss eine Note eingegeben werden\n";
-      if (String.IsNullOrEmpty(Schueler_tbx.Text)) ErrorMessage += "Es muss eine Email eingegeben werden\n";
+      if (Note < 1 || Note > 6) MessageBox.Show("Die Note muss zwischen 1 und 6 sein!", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Warning);
       else
       {
-        int Id = GetID(Email);
 
-        if (Fach == "Mathe") {
-          string queryFach = "update Noten set AnzMatheNot = AnzMatheNot + 1, SumMatheNot = SumMatheNot + @Value1 where ID = @Value2";
-          var Value1 = Note;
-          var Value2 = Id;
-          using (OleDbConnection connection = new OleDbConnection(Program.connectionString))
-          {
-            using (OleDbCommand command = new OleDbCommand(queryFach, connection))
-            {
-              // Parameter für die Abfrage hinzufügen
+        if (String.IsNullOrEmpty(Fach_tbx.Text)) ErrorMessage += "Es muss ein Fach eingegeben werden\n";
+        if (Double.IsNaN(Note)) ErrorMessage += "Es muss eine Note eingegeben werden\n";
+        if (String.IsNullOrEmpty(Schueler_tbx.Text)) ErrorMessage += "Es muss eine Email eingegeben werden\n";
+        if (!String.IsNullOrEmpty(ErrorMessage)) MessageBox.Show(ErrorMessage, "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        else
+        {
+          int Id = GetID(Email);
 
+          if (Fach == "Mathe") InsertintoFach(Note, Id, Fach);
+          else if (Fach == "Deutsch") { Fach = "Deu"; InsertintoFach(Note, Id, Fach); }
+          else if (Fach == "Informatik") { Fach = "Info"; InsertintoFach(Note, Id, Fach); }
+          else if (Fach == "Französisch") { Fach = "Franz"; InsertintoFach(Note, Id, Fach); }
 
-              connection.Open();
-              command.Parameters.AddWithValue("@Value1", Value1);
-              command.Parameters.AddWithValue("@Value2", Value2);
-
-
-              int rowsAffected = command.ExecuteNonQuery();
-
-
-              if (rowsAffected <= 0)
-              {
-                MessageBox.Show("Fehler beim einfügen der Note!", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
-              }
-            }
-          }
         }
       }
-
+      
 
 
     }
+    private void InsertintoFach(double Note, int Id, string Fach)
+    {
+      string queryFach = "update Noten set Anz"+ Fach + "Not = Anz"+ Fach + "Not + 1, Sum"+ Fach + "Not = Sum"+ Fach +"Not + @Value1 where ID = @Value2";
+      var Value1 = Note;
+      var Value2 = Id;
+      using (OleDbConnection connection = new OleDbConnection(Program.connectionString))
+      {
+        using (OleDbCommand command = new OleDbCommand(queryFach, connection))
+        {
+          // Parameter für die Abfrage hinzufügen
+
+
+
+          command.Parameters.AddWithValue("@Value1", Value1);
+          command.Parameters.AddWithValue("@Value2", Value2);
+          connection.Open();
+
+          int rowsAffected = command.ExecuteNonQuery();
+
+
+          if (rowsAffected <= 0)
+          {
+            MessageBox.Show("Fehler beim einfügen der Note!", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+          }
+          else { MessageBox.Show("Note eingefügt", "Akzeptiert", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+        }
+      }
+    }
+   
     private int GetID(string Email)
     {
       //Herstellung einer Verbindung zwischen C# und Datenbank
@@ -120,6 +134,36 @@ namespace SchoolManager
     private void OnX_Click(object sender, EventArgs e)
     {
       OnExit();
+    }
+
+    private void Schueler_tbx_TextChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    private void On_Fach_tbx_Click(object sender, EventArgs e)
+    {
+      Fach_tbx.Clear();
+    }
+
+    private void On_Note_tbx_Click(object sender, EventArgs e)
+    {
+      Note_tbx.Clear();
+    }
+
+    private void On_Email_tbx_Click(object sender, EventArgs e)
+    {
+      Schueler_tbx.Clear();
+    }
+
+    private void OnX_btn_Hover(object sender, EventArgs e)
+    {
+      X_Exit.BackColor = Color.Red;
+    }
+
+    private void OnX_btn_Leave(object sender, EventArgs e)
+    {
+      X_Exit.BackColor = Color.White;
     }
   }
 }
