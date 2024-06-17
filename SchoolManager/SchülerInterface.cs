@@ -39,8 +39,7 @@ namespace SchoolManager
           int FK_Klasse = user.FK_KLasse;
           Image Stundenplan = user.StundenplanBild;
           //Stundenplan = Convert.
-          var bmp = (Bitmap)StundenplanPB.Image;
-          bmp = (Bitmap)Stundenplan;
+          StundenplanPB.Image = Stundenplan;
 
         }
 
@@ -95,6 +94,7 @@ namespace SchoolManager
         {
             //Zeigt meine Informationen an
             IchTableManager.Show();
+            StundenplanPB.Hide();
         }
 
         private void Newsbtn_click(object sender, EventArgs e)

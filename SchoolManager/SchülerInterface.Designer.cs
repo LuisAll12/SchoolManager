@@ -552,8 +552,10 @@
       // StundenplanPB
       // 
       this.StundenplanPB.Location = new System.Drawing.Point(274, 46);
+      this.StundenplanPB.MaximumSize = new System.Drawing.Size(601, 770);
       this.StundenplanPB.Name = "StundenplanPB";
       this.StundenplanPB.Size = new System.Drawing.Size(601, 770);
+      this.StundenplanPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
       this.StundenplanPB.TabIndex = 3;
       this.StundenplanPB.TabStop = false;
       // 
