@@ -151,6 +151,11 @@ namespace SchoolManager
             //KLasse
         }
 
+    private void OnNotenLoad_Click(object sender, EventArgs e)
+    {
+
+    }
+
 
 
 

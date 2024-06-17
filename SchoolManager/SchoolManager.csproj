@@ -60,6 +60,12 @@
     <Compile Include="LehrerInterface.Designer.cs">
       <DependentUpon>LehrerInterface.cs</DependentUpon>
     </Compile>
+    <Compile Include="Noten.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Noten.Designer.cs">
+      <DependentUpon>Noten.cs</DependentUpon>
+    </Compile>
     <Compile Include="SchülerInterface.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LehrerInterface.resx">
       <DependentUpon>LehrerInterface.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Noten.resx">
+      <DependentUpon>Noten.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SchülerInterface.resx">
       <DependentUpon>SchülerInterface.cs</DependentUpon>
