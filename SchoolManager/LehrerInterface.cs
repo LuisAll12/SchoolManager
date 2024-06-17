@@ -21,7 +21,7 @@ namespace SchoolManager
         public LehrerInterface(Benutzer user)
         {
             InitializeComponent();
-
+            NoteHinz_btn.Hide();
             MainMenuNavIch.PerformClick();
             StundenplanPB.Hide();
 
@@ -131,9 +131,9 @@ namespace SchoolManager
 
         private void IchBtn_click(object sender, EventArgs e)
         {
-          tableLayoutPanel1.Show();
+          NoteHinz_btn.Hide();
           StundenplanPB.Hide();
-
+          tableLayoutPanel1.Show();
         }
 
         private void Newsbtn_click(object sender, EventArgs e)
@@ -148,18 +148,27 @@ namespace SchoolManager
         }
         private void MainMenuNavStundenplan_Click(object sender, EventArgs e)
         {
+          NoteHinz_btn.Hide();
           tableLayoutPanel1.Hide();
           StundenplanPB.Show();
-            //KLasse
-        }
+
+      //KLasse
+    }
 
 
 
         private void openNoten(object sender, EventArgs e)
         {
-          Noten form = new Noten();
-          form.Show();
+          tableLayoutPanel1.Hide();
+          StundenplanPB.Hide();
+          NoteHinz_btn.Show();
         }
+
+    private void OnNoteHinzu_Click(object sender, EventArgs e)
+    {
+      Noten notenform = new Noten();
+      notenform.Show();
+    }
 
 
 

@@ -120,7 +120,9 @@ namespace SchoolManager
         }
         reader.Close();
         connection.Close();
+        if (ID == 0) MessageBox.Show("Email nicht gefunden", "Email Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         return ID;
+        
       }
       
     }

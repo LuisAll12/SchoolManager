@@ -33,17 +33,17 @@
       this.panel1 = new System.Windows.Forms.Panel();
       this.XExitbtn = new System.Windows.Forms.Button();
       this.label1 = new System.Windows.Forms.Label();
+      this.MenuIcon = new System.Windows.Forms.PictureBox();
       this.SideBarContainer = new System.Windows.Forms.FlowLayoutPanel();
-      this.panel2 = new System.Windows.Forms.Panel();
-      this.SidebarTimer = new System.Windows.Forms.Timer(this.components);
-      this.StundenplanPB = new System.Windows.Forms.PictureBox();
       this.MainMenuNavIch = new System.Windows.Forms.Button();
       this.MainMenuNavNews = new System.Windows.Forms.Button();
       this.MainMenuNavNoten = new System.Windows.Forms.Button();
       this.MainMenuNavStundenplan = new System.Windows.Forms.Button();
+      this.panel2 = new System.Windows.Forms.Panel();
       this.MainMenuNavAbsenz = new System.Windows.Forms.Button();
       this.ExitBTN = new System.Windows.Forms.Button();
-      this.MenuIcon = new System.Windows.Forms.PictureBox();
+      this.SidebarTimer = new System.Windows.Forms.Timer(this.components);
+      this.StundenplanPB = new System.Windows.Forms.PictureBox();
       this.MainIchKlasse1 = new System.Windows.Forms.Label();
       this.label2 = new System.Windows.Forms.Label();
       this.label3 = new System.Windows.Forms.Label();
@@ -55,11 +55,12 @@
       this.label9 = new System.Windows.Forms.Label();
       this.label10 = new System.Windows.Forms.Label();
       this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+      this.NoteHinz_btn = new System.Windows.Forms.Button();
       this.panel1.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.MenuIcon)).BeginInit();
       this.SideBarContainer.SuspendLayout();
       this.panel2.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.StundenplanPB)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.MenuIcon)).BeginInit();
       this.tableLayoutPanel1.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -97,6 +98,18 @@
       this.label1.TabIndex = 2;
       this.label1.Text = "Schoolmanager";
       // 
+      // MenuIcon
+      // 
+      this.MenuIcon.Image = global::SchoolManager.Properties.Resources._134216_menu_lines_hamburger_icon;
+      this.MenuIcon.InitialImage = ((System.Drawing.Image)(resources.GetObject("MenuIcon.InitialImage")));
+      this.MenuIcon.Location = new System.Drawing.Point(8, 3);
+      this.MenuIcon.Name = "MenuIcon";
+      this.MenuIcon.Size = new System.Drawing.Size(43, 40);
+      this.MenuIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+      this.MenuIcon.TabIndex = 1;
+      this.MenuIcon.TabStop = false;
+      this.MenuIcon.Click += new System.EventHandler(this.OnmenuTransaktion);
+      // 
       // SideBarContainer
       // 
       this.SideBarContainer.BackColor = System.Drawing.Color.LightSlateGray;
@@ -113,29 +126,6 @@
       this.SideBarContainer.Name = "SideBarContainer";
       this.SideBarContainer.Size = new System.Drawing.Size(87, 777);
       this.SideBarContainer.TabIndex = 1;
-      // 
-      // panel2
-      // 
-      this.panel2.Controls.Add(this.MainMenuNavAbsenz);
-      this.panel2.Location = new System.Drawing.Point(3, 379);
-      this.panel2.Name = "panel2";
-      this.panel2.Size = new System.Drawing.Size(239, 301);
-      this.panel2.TabIndex = 2;
-      // 
-      // SidebarTimer
-      // 
-      this.SidebarTimer.Interval = 25;
-      this.SidebarTimer.Tick += new System.EventHandler(this.Sidebartimer_Tick);
-      // 
-      // StundenplanPB
-      // 
-      this.StundenplanPB.Location = new System.Drawing.Point(269, 25);
-      this.StundenplanPB.MaximumSize = new System.Drawing.Size(601, 770);
-      this.StundenplanPB.Name = "StundenplanPB";
-      this.StundenplanPB.Size = new System.Drawing.Size(601, 770);
-      this.StundenplanPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-      this.StundenplanPB.TabIndex = 4;
-      this.StundenplanPB.TabStop = false;
       // 
       // MainMenuNavIch
       // 
@@ -202,6 +192,14 @@
       this.MainMenuNavStundenplan.UseVisualStyleBackColor = false;
       this.MainMenuNavStundenplan.Click += new System.EventHandler(this.MainMenuNavStundenplan_Click);
       // 
+      // panel2
+      // 
+      this.panel2.Controls.Add(this.MainMenuNavAbsenz);
+      this.panel2.Location = new System.Drawing.Point(3, 379);
+      this.panel2.Name = "panel2";
+      this.panel2.Size = new System.Drawing.Size(239, 301);
+      this.panel2.TabIndex = 2;
+      // 
       // MainMenuNavAbsenz
       // 
       this.MainMenuNavAbsenz.BackColor = System.Drawing.Color.LightSlateGray;
@@ -235,17 +233,20 @@
       this.ExitBTN.UseVisualStyleBackColor = false;
       this.ExitBTN.Click += new System.EventHandler(this.OnExit);
       // 
-      // MenuIcon
+      // SidebarTimer
       // 
-      this.MenuIcon.Image = global::SchoolManager.Properties.Resources._134216_menu_lines_hamburger_icon;
-      this.MenuIcon.InitialImage = ((System.Drawing.Image)(resources.GetObject("MenuIcon.InitialImage")));
-      this.MenuIcon.Location = new System.Drawing.Point(8, 3);
-      this.MenuIcon.Name = "MenuIcon";
-      this.MenuIcon.Size = new System.Drawing.Size(43, 40);
-      this.MenuIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-      this.MenuIcon.TabIndex = 1;
-      this.MenuIcon.TabStop = false;
-      this.MenuIcon.Click += new System.EventHandler(this.OnmenuTransaktion);
+      this.SidebarTimer.Interval = 25;
+      this.SidebarTimer.Tick += new System.EventHandler(this.Sidebartimer_Tick);
+      // 
+      // StundenplanPB
+      // 
+      this.StundenplanPB.Location = new System.Drawing.Point(269, 25);
+      this.StundenplanPB.MaximumSize = new System.Drawing.Size(601, 770);
+      this.StundenplanPB.Name = "StundenplanPB";
+      this.StundenplanPB.Size = new System.Drawing.Size(601, 770);
+      this.StundenplanPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+      this.StundenplanPB.TabIndex = 4;
+      this.StundenplanPB.TabStop = false;
       // 
       // MainIchKlasse1
       // 
@@ -379,6 +380,17 @@
       this.tableLayoutPanel1.Size = new System.Drawing.Size(805, 536);
       this.tableLayoutPanel1.TabIndex = 2;
       // 
+      // NoteHinz_btn
+      // 
+      this.NoteHinz_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.NoteHinz_btn.Location = new System.Drawing.Point(121, 66);
+      this.NoteHinz_btn.Name = "NoteHinz_btn";
+      this.NoteHinz_btn.Size = new System.Drawing.Size(199, 92);
+      this.NoteHinz_btn.TabIndex = 5;
+      this.NoteHinz_btn.Text = "Note Hinzufügen";
+      this.NoteHinz_btn.UseVisualStyleBackColor = true;
+      this.NoteHinz_btn.Click += new System.EventHandler(this.OnNoteHinzu_Click);
+      // 
       // LehrerInterface
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -386,6 +398,7 @@
       this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
       this.BackColor = System.Drawing.Color.GhostWhite;
       this.ClientSize = new System.Drawing.Size(1139, 820);
+      this.Controls.Add(this.NoteHinz_btn);
       this.Controls.Add(this.StundenplanPB);
       this.Controls.Add(this.tableLayoutPanel1);
       this.Controls.Add(this.SideBarContainer);
@@ -398,10 +411,10 @@
       this.Load += new System.EventHandler(this.SchoolmanagerMainMenu_Load);
       this.panel1.ResumeLayout(false);
       this.panel1.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.MenuIcon)).EndInit();
       this.SideBarContainer.ResumeLayout(false);
       this.panel2.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.StundenplanPB)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.MenuIcon)).EndInit();
       this.tableLayoutPanel1.ResumeLayout(false);
       this.tableLayoutPanel1.PerformLayout();
       this.ResumeLayout(false);
@@ -435,5 +448,6 @@
     private System.Windows.Forms.Label label9;
     private System.Windows.Forms.Label label10;
     private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+    private System.Windows.Forms.Button NoteHinz_btn;
   }
 }
