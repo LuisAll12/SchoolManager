@@ -22,14 +22,23 @@ namespace SchoolManager
         {
             InitializeComponent();
 
+            MainMenuNavIch.PerformClick();
+            StundenplanPB.Hide();
 
-            
-            
             inklasse = foreachKlasse(user);
             Klasse1(user);
+            LoadStundenplan(user);
 
         }
-        private void Klasse1(Benutzer user)
+        private void LoadStundenplan(Benutzer user)
+        {
+          int FK_Klasse = user.FK_KLasse;
+          Image Stundenplan = user.StundenplanBild;
+          //Stundenplan = Convert.
+          StundenplanPB.Image = Stundenplan;
+
+        }
+    private void Klasse1(Benutzer user)
         {
             MainIchKlasse1.Text = user.Stufe.ToString() + user.Klasse + ": " + inklasse.ToString();
         }
@@ -120,6 +129,8 @@ namespace SchoolManager
 
         private void IchBtn_click(object sender, EventArgs e)
         {
+          tableLayoutPanel1.Show();
+          StundenplanPB.Hide();
 
         }
 
@@ -133,6 +144,12 @@ namespace SchoolManager
 
 
         }
+        private void MainMenuNavStundenplan_Click(object sender, EventArgs e)
+        {
+          tableLayoutPanel1.Hide();
+          StundenplanPB.Show();
+            //KLasse
+        }
 
 
 
@@ -141,8 +158,8 @@ namespace SchoolManager
 
 
 
-        //(IchTable) Informationen
+    //(IchTable) Informationen
 
 
-    }
+  }
 }
