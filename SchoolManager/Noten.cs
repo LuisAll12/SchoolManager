@@ -51,11 +51,12 @@ namespace SchoolManager
       if (String.IsNullOrEmpty(Schueler_tbx.Text)) ErrorMessage += "Es muss eine Email eingegeben werden\n";
       else 
       {
-        int ID = LoadAllSchueler(Email);
+        int Id = GetID(Email);
 
         if (Fach == "Mathe"){ 
-        string queryFach = "update Noten set AnzMatheNot = AnzMatheNot + 1 where ID = @Value1";
-        var Value1 = ID;
+        string queryFach = "update Noten set AnzMatheNot = AnzMatheNot + 1, SumMatheNot = SumMatheNot + @Value1 where ID = @Value2";
+        var Value1 = Note;
+        var Value2 = Id;
           using (OleDbConnection connection = new OleDbConnection(Program.connectionString))
           {
             using (OleDbCommand command = new OleDbCommand(queryFach, connection))
@@ -65,6 +66,7 @@ namespace SchoolManager
 
               connection.Open();
               command.Parameters.AddWithValue("@Value1", Value1);
+              command.Parameters.AddWithValue("@Value2", Value2);
 
 
               int rowsAffected = command.ExecuteNonQuery();
@@ -82,7 +84,7 @@ namespace SchoolManager
 
 
       }
-      private int LoadAllSchueler(string Email)
+      private int GetID(string Email)
       {
         //Herstellung einer Verbindung zwischen C# und Datenbank
         //Öffnet die Ergebnisse Schüler
