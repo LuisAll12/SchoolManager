@@ -75,7 +75,8 @@ namespace SchoolManager
                     Strasse = reader.GetString(reader.GetOrdinal("Strasse"));
                     Hausnum = reader.GetInt32(reader.GetOrdinal("Hausnummer"));
                     Berechtigung = reader.GetInt32(reader.GetOrdinal("Berechtigung"));
-                }
+                    FK_KLasse = reader.GetInt32(reader.GetOrdinal("FK_Klasse"));
+        }
                 reader.Close();
                 connection.Close();
             }
@@ -87,9 +88,7 @@ namespace SchoolManager
             //Herstellung einer Verbindung zwischen C# und Datenbank
             //Öffnet die Ergebnisse Schüler
             string query = "SELECT SchuelerID FROM Schueler WHERE FK_Klasse = @ForeignKey";
-            
-
-            var ForeignKey = 1;
+            var ForeignKey = FK_KLasse;
 
             using (OleDbConnection connection = new OleDbConnection(Program.connectionString))
             {
@@ -121,7 +120,7 @@ namespace SchoolManager
     {
       //Herstellung einer Verbindung zwischen C# und Datenbank
       //Öffnet die Ergebnisse Schüler
-      string query = "select Stundenplan from Klasse where FK_Klasse = @Value1";
+      string query = "select Stundenplan.FileData from Klasse where KlasseId = @Value1";
       var Value1 = FK_KLasse;
 
       using (OleDbConnection connection = new OleDbConnection(Program.connectionString))
