@@ -53,6 +53,7 @@
       this.X_Exit.TabIndex = 0;
       this.X_Exit.Text = "X";
       this.X_Exit.UseVisualStyleBackColor = true;
+      this.X_Exit.Click += new System.EventHandler(this.OnX_Click);
       // 
       // Noten_lbl
       // 
