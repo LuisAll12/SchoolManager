@@ -33,13 +33,16 @@ namespace SchoolManager
         //Variabeln Klasse
         public int KlasseID = int.MinValue;
         public string BezKlasse = string.Empty;
-
+        // Stundenplan bild Variable
         public Image StundenplanBild;
 
-
+        // Klassenliste als Liste mit Namen
         public List<int> userId_Klasse1 = new List<int>();
-        
-        
+        // Noten
+        public double Mathe_Not = double.MinValue;
+        public double Deu_Not = double.MinValue;
+        public double Info_Not = double.MinValue;
+        public double Franz_Not = double.MinValue;
 
 
         public void LoadAllSchueler()
@@ -138,6 +141,33 @@ namespace SchoolManager
           Array.Copy(ImgBytes, HeaderLen, ImgArray, 0, ImgBytes.Length - HeaderLen);
           MemoryStream MemStream = new MemoryStream(ImgArray);
           StundenplanBild = new Bitmap(Bitmap.FromStream(MemStream));
+        }
+        reader.Close();
+        connection.Close();
+      }
+
+
+    }
+    public void LoadAllNoten()
+    {
+      //Herstellung einer Verbindung zwischen C# und Datenbank
+      //Öffnet die Ergebnisse Schüler
+      string query = "select MatheNot, DeuNot, InfoNot, FranzNot from Noten where ID = @Value1";
+      var Value1 = _id;
+
+      using (OleDbConnection connection = new OleDbConnection(Program.connectionString))
+
+      {
+        OleDbCommand command = new OleDbCommand(query, connection);
+        command.Parameters.AddWithValue("@Value1", Value1);
+        connection.Open();
+        OleDbDataReader reader = command.ExecuteReader();
+        while (reader.Read())
+        {
+          Mathe_Not = reader.GetDouble(reader.GetOrdinal("MatheNot"));
+          Deu_Not = reader.GetDouble(reader.GetOrdinal("DeuNot"));
+          Info_Not = reader.GetDouble(reader.GetOrdinal("InfoNot"));
+          Franz_Not = reader.GetDouble(reader.GetOrdinal("FranzNot"));
         }
         reader.Close();
         connection.Close();
