@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,7 +14,7 @@ namespace SchoolManager
 {
     public partial class SchuelerInterface : Form
     {
-
+          public Benutzer Id;
 
         public SchuelerInterface(Benutzer user)
         {
@@ -30,9 +31,12 @@ namespace SchoolManager
             MainIchStrasse.Text = user.Strasse; 
             MainIchTel.Text = user.Tel;
             StundenplanPB.Hide();
+            Noten_table.Hide();
             LoadStundenplan(user);
             LoadAllNote_Interface(user);
+            Id = user;
         }
+
 
         private void LoadStundenplan(Benutzer user)
         {
@@ -117,14 +121,41 @@ namespace SchoolManager
 
     private void LoadAllNote_Interface(Benutzer user)
     {
-      double Mathenot = user.SumMathe_Not / user.AnzMathe_Not;
 
-      Note_Mathe_lbl.Text = Mathenot.ToString();
+      Note_Mathe_lbl.Text = user.Mathe_Not.ToString();
       Note_Deu_lbl.Text   = user.Deu_Not.ToString();
       Note_Franz_lbl.Text = user.Franz_Not.ToString();
       Note_Info_lbl.Text = user.Info_Not.ToString();
     }
 
+    private void On_Noten_Click(object sender, EventArgs e)
+    {
+      IchTableManager.Hide();
+      StundenplanPB.Hide();
+      Noten_table.Show();
+    }
+
+    private void OnClickInfo_best(object sender, EventArgs e)
+    {
+
+      string query = "update Noten set Info_best = true where ID = @Value1";
+      var Value1 = Id;
+      using (OleDbConnection connection = new OleDbConnection(Program.connectionString))
+      {
+        try
+        {
+          connection.Open();
+          using (OleDbCommand command = new OleDbCommand(query, connection))
+          {
+            int rowsAffected = command.ExecuteNonQuery();
+            MessageBox.Show("Note eingefügt", "Akzeptiert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+          }
+        }
+        catch (Exception ex)
+        {
+          MessageBox.Show(ex.ToString(), "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+      }
 
 
 
@@ -132,6 +163,7 @@ namespace SchoolManager
 
 
 
+    }
     //(IchTable) Informationen
 
 

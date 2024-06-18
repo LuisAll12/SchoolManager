@@ -63,26 +63,6 @@ namespace SchoolManager
             if (!string.IsNullOrEmpty(ErrorMessage)) MessageBox.Show($"{ErrorMessage}");
 
 
-
-            //bool Usernameisgiven = false;
-
-            //string ErrorMessage = string.Empty;
-            //username = GetUsername();
-            //for (int i = 0; i < username.Count; i++)
-            //    if (AnmeldungEmailEing.Text == username[i]) { Usernameisgiven = true; RealUsername = username[i]; }
-            //password = GetPassword();
-            //if ((Usernameisgiven == false)) ErrorMessage += "Email falsch oder Passwort falsch\n";
-            //else if (!(AnmeldungPasswortEing.Text == password)) ErrorMessage += "Email falsch oder Passwort falsch\n";
-            //if (!string.IsNullOrEmpty(ErrorMessage)) MessageBox.Show($"{ErrorMessage}");
-            //else
-            //{
-            //    this.anmeldeID = GetID();
-            //    this.Hide();
-            //    var form2 = new SchoolmanagerMainMenu(anmeldeID, this);
-            //    obj = new Inputs(anmeldeID);
-            //    form2.Closed += (s, args) => this.Close();
-            //    form2.Show();
-            //}
         }
 
  

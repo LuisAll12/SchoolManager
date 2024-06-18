@@ -14,7 +14,7 @@ namespace SchoolManager
     public class Benutzer
     {
         public static int _id;
-        public Benutzer(int id) { _id = id; LoadAllSchueler(); LoadAllKlasse(); LoadKlasseStundenplan(); }
+        public Benutzer(int id) { _id = id; LoadAllSchueler(); LoadAllKlasse(); LoadKlasseStundenplan(); LoadAllNoten(); }
         //Variabeln Schüler
         public string Username = string.Empty;
         public string Nachname = string.Empty;
@@ -39,8 +39,7 @@ namespace SchoolManager
         // Klassenliste als Liste mit Namen
         public List<int> userId_Klasse1 = new List<int>();
         // Noten
-        public double SumMathe_Not = double.MinValue;
-        public double AnzMathe_Not = double.MinValue;
+        public double Mathe_Not = double.MinValue;
         public double Deu_Not = double.MinValue;
         public double Info_Not = double.MinValue;
         public double Franz_Not = double.MinValue;
@@ -153,7 +152,7 @@ namespace SchoolManager
     {
       //Herstellung einer Verbindung zwischen C# und Datenbank
       //Öffnet die Ergebnisse Schüler
-      string query = "select * from Noten where ID = @Value1";
+      string query = "select InfoNot, FranzNot, MatheNot, DeuNot from Noten where ID = @Value1";
       var Value1 = _id;
 
       using (OleDbConnection connection = new OleDbConnection(Program.connectionString))
@@ -165,10 +164,11 @@ namespace SchoolManager
         OleDbDataReader reader = command.ExecuteReader();
         while (reader.Read())
         {
-          SumMathe_Not = reader.GetDouble(reader.GetOrdinal("SumMatheNot"));
-          AnzMathe_Not = reader.GetDouble(reader.GetOrdinal("AnzDeuNot"));
+          
           Info_Not = reader.GetDouble(reader.GetOrdinal("InfoNot"));
+          Mathe_Not = reader.GetDouble(reader.GetOrdinal("MatheNot"));
           Franz_Not = reader.GetDouble(reader.GetOrdinal("FranzNot"));
+          Deu_Not = reader.GetDouble(reader.GetOrdinal("DeuNot"));
         }
         reader.Close();
         connection.Close();
