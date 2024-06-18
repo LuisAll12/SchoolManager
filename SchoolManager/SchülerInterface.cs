@@ -138,7 +138,7 @@ namespace SchoolManager
     private void OnClickInfo_best(object sender, EventArgs e)
     {
 
-      string query = "update Noten set Info_best = true where ID = @Value1";
+      string query = "Update Noten set Info_best = 1 where ID = @value1";
       var Value1 = Id;
       using (OleDbConnection connection = new OleDbConnection(Program.connectionString))
       {
@@ -147,13 +147,14 @@ namespace SchoolManager
           connection.Open();
           using (OleDbCommand command = new OleDbCommand(query, connection))
           {
+            command.Parameters.AddWithValue("@Value1", Value1);
             int rowsAffected = command.ExecuteNonQuery();
             MessageBox.Show("Note eingefügt", "Akzeptiert", MessageBoxButtons.OK, MessageBoxIcon.Information);
           }
         }
         catch (Exception ex)
         {
-          MessageBox.Show(ex.ToString(), "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+          MessageBox.Show("Konnte nicht ausgeführt werden", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
       }
 
