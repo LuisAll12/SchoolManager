@@ -67,12 +67,27 @@
       this.SidebarTimer = new System.Windows.Forms.Timer(this.components);
       this.imageList1 = new System.Windows.Forms.ImageList(this.components);
       this.StundenplanPB = new System.Windows.Forms.PictureBox();
+      this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+      this.label3 = new System.Windows.Forms.Label();
+      this.Note_Franz_lbl = new System.Windows.Forms.Label();
+      this.Fach_lbl = new System.Windows.Forms.Label();
+      this.Note_Info_lbl = new System.Windows.Forms.Label();
+      this.Info_Best_lbl = new System.Windows.Forms.Label();
+      this.Fach_Mathe_lbl = new System.Windows.Forms.Label();
+      this.Note_Mathe_lbl = new System.Windows.Forms.Label();
+      this.Fach_Deutsch_lbl = new System.Windows.Forms.Label();
+      this.Note_Deu_lbl = new System.Windows.Forms.Label();
+      this.Fach_Franz_lbl = new System.Windows.Forms.Label();
+      this.Mathe_Best_lbl = new System.Windows.Forms.Label();
+      this.Deu_Best_lbl = new System.Windows.Forms.Label();
+      this.Franz_best_lbl = new System.Windows.Forms.Label();
       this.panel1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.MenuIcon)).BeginInit();
       this.SideBarContainer.SuspendLayout();
       this.panel2.SuspendLayout();
       this.IchTableManager.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.StundenplanPB)).BeginInit();
+      this.tableLayoutPanel1.SuspendLayout();
       this.SuspendLayout();
       // 
       // panel1
@@ -291,7 +306,7 @@
       this.IchTableManager.Controls.Add(this.Vornamelbl, 0, 1);
       this.IchTableManager.Controls.Add(this.MainIchEmail, 1, 0);
       this.IchTableManager.Controls.Add(this.EmailLBL, 0, 0);
-      this.IchTableManager.Location = new System.Drawing.Point(268, 185);
+      this.IchTableManager.Location = new System.Drawing.Point(274, 186);
       this.IchTableManager.Name = "IchTableManager";
       this.IchTableManager.RowCount = 10;
       this.IchTableManager.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
@@ -304,6 +319,7 @@
       this.IchTableManager.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
       this.IchTableManager.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
       this.IchTableManager.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+      this.IchTableManager.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
       this.IchTableManager.Size = new System.Drawing.Size(748, 426);
       this.IchTableManager.TabIndex = 2;
       this.IchTableManager.Paint += new System.Windows.Forms.PaintEventHandler(this.IchTableManager_Paint);
@@ -551,13 +567,171 @@
       // 
       // StundenplanPB
       // 
-      this.StundenplanPB.Location = new System.Drawing.Point(274, 46);
+      this.StundenplanPB.Location = new System.Drawing.Point(301, 68);
       this.StundenplanPB.MaximumSize = new System.Drawing.Size(601, 770);
       this.StundenplanPB.Name = "StundenplanPB";
       this.StundenplanPB.Size = new System.Drawing.Size(601, 770);
       this.StundenplanPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
       this.StundenplanPB.TabIndex = 3;
       this.StundenplanPB.TabStop = false;
+      // 
+      // tableLayoutPanel1
+      // 
+      this.tableLayoutPanel1.ColumnCount = 3;
+      this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+      this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+      this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+      this.tableLayoutPanel1.Controls.Add(this.Franz_best_lbl, 2, 3);
+      this.tableLayoutPanel1.Controls.Add(this.Deu_Best_lbl, 2, 2);
+      this.tableLayoutPanel1.Controls.Add(this.Mathe_Best_lbl, 2, 1);
+      this.tableLayoutPanel1.Controls.Add(this.Fach_Franz_lbl, 0, 3);
+      this.tableLayoutPanel1.Controls.Add(this.Note_Deu_lbl, 1, 2);
+      this.tableLayoutPanel1.Controls.Add(this.Fach_Deutsch_lbl, 0, 2);
+      this.tableLayoutPanel1.Controls.Add(this.Note_Mathe_lbl, 1, 1);
+      this.tableLayoutPanel1.Controls.Add(this.Fach_Mathe_lbl, 0, 1);
+      this.tableLayoutPanel1.Controls.Add(this.Info_Best_lbl, 2, 0);
+      this.tableLayoutPanel1.Controls.Add(this.Note_Info_lbl, 1, 0);
+      this.tableLayoutPanel1.Controls.Add(this.Fach_lbl, 0, 0);
+      this.tableLayoutPanel1.Controls.Add(this.Note_Franz_lbl, 1, 3);
+      this.tableLayoutPanel1.Location = new System.Drawing.Point(274, 260);
+      this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+      this.tableLayoutPanel1.RowCount = 4;
+      this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+      this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+      this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+      this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+      this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+      this.tableLayoutPanel1.Size = new System.Drawing.Size(598, 255);
+      this.tableLayoutPanel1.TabIndex = 4;
+      // 
+      // label3
+      // 
+      this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+      this.label3.AutoSize = true;
+      this.label3.Location = new System.Drawing.Point(629, 887);
+      this.label3.Name = "label3";
+      this.label3.Size = new System.Drawing.Size(51, 20);
+      this.label3.TabIndex = 5;
+      this.label3.Text = "label3";
+      // 
+      // Note_Franz_lbl
+      // 
+      this.Note_Franz_lbl.AutoSize = true;
+      this.Note_Franz_lbl.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.Note_Franz_lbl.Location = new System.Drawing.Point(302, 189);
+      this.Note_Franz_lbl.Name = "Note_Franz_lbl";
+      this.Note_Franz_lbl.Size = new System.Drawing.Size(143, 66);
+      this.Note_Franz_lbl.TabIndex = 6;
+      // 
+      // Fach_lbl
+      // 
+      this.Fach_lbl.AutoSize = true;
+      this.Fach_lbl.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.Fach_lbl.Location = new System.Drawing.Point(3, 0);
+      this.Fach_lbl.Name = "Fach_lbl";
+      this.Fach_lbl.Size = new System.Drawing.Size(293, 63);
+      this.Fach_lbl.TabIndex = 7;
+      this.Fach_lbl.Text = "Informatik";
+      // 
+      // Note_Info_lbl
+      // 
+      this.Note_Info_lbl.AutoSize = true;
+      this.Note_Info_lbl.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.Note_Info_lbl.Location = new System.Drawing.Point(302, 0);
+      this.Note_Info_lbl.Name = "Note_Info_lbl";
+      this.Note_Info_lbl.Size = new System.Drawing.Size(143, 63);
+      this.Note_Info_lbl.TabIndex = 8;
+      // 
+      // Info_Best_lbl
+      // 
+      this.Info_Best_lbl.AutoSize = true;
+      this.Info_Best_lbl.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.Info_Best_lbl.Location = new System.Drawing.Point(451, 0);
+      this.Info_Best_lbl.Name = "Info_Best_lbl";
+      this.Info_Best_lbl.Size = new System.Drawing.Size(144, 63);
+      this.Info_Best_lbl.TabIndex = 9;
+      this.Info_Best_lbl.Text = "Bestätigen";
+      // 
+      // Fach_Mathe_lbl
+      // 
+      this.Fach_Mathe_lbl.AutoSize = true;
+      this.Fach_Mathe_lbl.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.Fach_Mathe_lbl.Location = new System.Drawing.Point(3, 63);
+      this.Fach_Mathe_lbl.Name = "Fach_Mathe_lbl";
+      this.Fach_Mathe_lbl.Size = new System.Drawing.Size(293, 63);
+      this.Fach_Mathe_lbl.TabIndex = 10;
+      this.Fach_Mathe_lbl.Text = "Mathematik";
+      // 
+      // Note_Mathe_lbl
+      // 
+      this.Note_Mathe_lbl.AutoSize = true;
+      this.Note_Mathe_lbl.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.Note_Mathe_lbl.Location = new System.Drawing.Point(302, 63);
+      this.Note_Mathe_lbl.Name = "Note_Mathe_lbl";
+      this.Note_Mathe_lbl.RightToLeft = System.Windows.Forms.RightToLeft.No;
+      this.Note_Mathe_lbl.Size = new System.Drawing.Size(143, 63);
+      this.Note_Mathe_lbl.TabIndex = 11;
+      // 
+      // Fach_Deutsch_lbl
+      // 
+      this.Fach_Deutsch_lbl.AutoSize = true;
+      this.Fach_Deutsch_lbl.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.Fach_Deutsch_lbl.Location = new System.Drawing.Point(3, 126);
+      this.Fach_Deutsch_lbl.Name = "Fach_Deutsch_lbl";
+      this.Fach_Deutsch_lbl.Size = new System.Drawing.Size(293, 63);
+      this.Fach_Deutsch_lbl.TabIndex = 13;
+      this.Fach_Deutsch_lbl.Text = "Deutsch";
+      // 
+      // Note_Deu_lbl
+      // 
+      this.Note_Deu_lbl.AutoSize = true;
+      this.Note_Deu_lbl.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.Note_Deu_lbl.Location = new System.Drawing.Point(302, 126);
+      this.Note_Deu_lbl.Name = "Note_Deu_lbl";
+      this.Note_Deu_lbl.Size = new System.Drawing.Size(143, 63);
+      this.Note_Deu_lbl.TabIndex = 14;
+      // 
+      // Fach_Franz_lbl
+      // 
+      this.Fach_Franz_lbl.AutoSize = true;
+      this.Fach_Franz_lbl.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.Fach_Franz_lbl.Location = new System.Drawing.Point(3, 189);
+      this.Fach_Franz_lbl.Name = "Fach_Franz_lbl";
+      this.Fach_Franz_lbl.Size = new System.Drawing.Size(293, 66);
+      this.Fach_Franz_lbl.TabIndex = 16;
+      this.Fach_Franz_lbl.Text = "Französisch";
+      // 
+      // Mathe_Best_lbl
+      // 
+      this.Mathe_Best_lbl.AutoSize = true;
+      this.Mathe_Best_lbl.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.Mathe_Best_lbl.Location = new System.Drawing.Point(451, 63);
+      this.Mathe_Best_lbl.Name = "Mathe_Best_lbl";
+      this.Mathe_Best_lbl.Size = new System.Drawing.Size(144, 63);
+      this.Mathe_Best_lbl.TabIndex = 18;
+      this.Mathe_Best_lbl.Text = "Bestätigen";
+      // 
+      // Deu_Best_lbl
+      // 
+      this.Deu_Best_lbl.AutoSize = true;
+      this.Deu_Best_lbl.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.Deu_Best_lbl.Location = new System.Drawing.Point(451, 126);
+      this.Deu_Best_lbl.Name = "Deu_Best_lbl";
+      this.Deu_Best_lbl.Size = new System.Drawing.Size(144, 63);
+      this.Deu_Best_lbl.TabIndex = 19;
+      this.Deu_Best_lbl.Text = "Bestätigen";
+      // 
+      // Franz_best_lbl
+      // 
+      this.Franz_best_lbl.AutoSize = true;
+      this.Franz_best_lbl.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.Franz_best_lbl.Location = new System.Drawing.Point(451, 189);
+      this.Franz_best_lbl.Name = "Franz_best_lbl";
+      this.Franz_best_lbl.Size = new System.Drawing.Size(144, 66);
+      this.Franz_best_lbl.TabIndex = 20;
+      this.Franz_best_lbl.Text = "Bestätigen";
       // 
       // SchuelerInterface
       // 
@@ -566,6 +740,8 @@
       this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
       this.BackColor = System.Drawing.Color.GhostWhite;
       this.ClientSize = new System.Drawing.Size(1138, 820);
+      this.Controls.Add(this.label3);
+      this.Controls.Add(this.tableLayoutPanel1);
       this.Controls.Add(this.StundenplanPB);
       this.Controls.Add(this.IchTableManager);
       this.Controls.Add(this.SideBarContainer);
@@ -584,7 +760,10 @@
       this.IchTableManager.ResumeLayout(false);
       this.IchTableManager.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.StundenplanPB)).EndInit();
+      this.tableLayoutPanel1.ResumeLayout(false);
+      this.tableLayoutPanel1.PerformLayout();
       this.ResumeLayout(false);
+      this.PerformLayout();
 
         }
 
@@ -627,5 +806,19 @@
         private System.Windows.Forms.Label MainIchTel;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.PictureBox StundenplanPB;
-    }
+    private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+    private System.Windows.Forms.Label Fach_Franz_lbl;
+    private System.Windows.Forms.Label Note_Deu_lbl;
+    private System.Windows.Forms.Label Fach_Deutsch_lbl;
+    private System.Windows.Forms.Label Note_Mathe_lbl;
+    private System.Windows.Forms.Label Info_Best_lbl;
+    private System.Windows.Forms.Label Note_Info_lbl;
+    private System.Windows.Forms.Label Fach_lbl;
+    private System.Windows.Forms.Label Note_Franz_lbl;
+    private System.Windows.Forms.Label label3;
+    private System.Windows.Forms.Label Franz_best_lbl;
+    private System.Windows.Forms.Label Deu_Best_lbl;
+    private System.Windows.Forms.Label Mathe_Best_lbl;
+    private System.Windows.Forms.Label Fach_Mathe_lbl;
+  }
 }
