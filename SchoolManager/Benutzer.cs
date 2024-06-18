@@ -39,7 +39,8 @@ namespace SchoolManager
         // Klassenliste als Liste mit Namen
         public List<int> userId_Klasse1 = new List<int>();
         // Noten
-        public double Mathe_Not = double.MinValue;
+        public double SumMathe_Not = double.MinValue;
+        public double AnzMathe_Not = double.MinValue;
         public double Deu_Not = double.MinValue;
         public double Info_Not = double.MinValue;
         public double Franz_Not = double.MinValue;
@@ -152,7 +153,7 @@ namespace SchoolManager
     {
       //Herstellung einer Verbindung zwischen C# und Datenbank
       //Öffnet die Ergebnisse Schüler
-      string query = "select MatheNot, DeuNot, InfoNot, FranzNot from Noten where ID = @Value1";
+      string query = "select * from Noten where ID = @Value1";
       var Value1 = _id;
 
       using (OleDbConnection connection = new OleDbConnection(Program.connectionString))
@@ -164,8 +165,8 @@ namespace SchoolManager
         OleDbDataReader reader = command.ExecuteReader();
         while (reader.Read())
         {
-          Mathe_Not = reader.GetDouble(reader.GetOrdinal("MatheNot"));
-          Deu_Not = reader.GetDouble(reader.GetOrdinal("DeuNot"));
+          SumMathe_Not = reader.GetDouble(reader.GetOrdinal("SumMatheNot"));
+          AnzMathe_Not = reader.GetDouble(reader.GetOrdinal("AnzDeuNot"));
           Info_Not = reader.GetDouble(reader.GetOrdinal("InfoNot"));
           Franz_Not = reader.GetDouble(reader.GetOrdinal("FranzNot"));
         }

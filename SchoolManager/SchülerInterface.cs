@@ -31,7 +31,7 @@ namespace SchoolManager
             MainIchTel.Text = user.Tel;
             StundenplanPB.Hide();
             LoadStundenplan(user);
-
+            LoadAllNote_Interface(user);
         }
 
         private void LoadStundenplan(Benutzer user)
@@ -113,6 +113,16 @@ namespace SchoolManager
     private void IchTableManager_Paint(object sender, PaintEventArgs e)
     {
 
+    }
+
+    private void LoadAllNote_Interface(Benutzer user)
+    {
+      double Mathenot = user.SumMathe_Not / user.AnzMathe_Not;
+
+      Note_Mathe_lbl.Text = Mathenot.ToString();
+      Note_Deu_lbl.Text   = user.Deu_Not.ToString();
+      Note_Franz_lbl.Text = user.Franz_Not.ToString();
+      Note_Info_lbl.Text = user.Info_Not.ToString();
     }
 
 
