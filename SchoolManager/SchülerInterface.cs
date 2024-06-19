@@ -28,7 +28,7 @@ namespace SchoolManager
             MainIchKlasse.Text = user.Klasse;
             MainIchPLZ.Text = user.PLZ.ToString();
             MainIchOrt.Text = user.Ort;
-            MainIchStrasse.Text = user.Strasse; 
+            MainIchStrasse.Text = user.Strasse + " " + user.Hausnum.ToString(); 
             MainIchTel.Text = user.Tel;
             StundenplanPB.Hide();
             Noten_table.Hide();
