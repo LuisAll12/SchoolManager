@@ -126,6 +126,8 @@ namespace SchoolManager
       Note_Deu_lbl.Text   = user.Deu_Not.ToString();
       Note_Franz_lbl.Text = user.Franz_Not.ToString();
       Note_Info_lbl.Text = user.Info_Not.ToString();
+
+      Info_Chb.Checked = user.Info_Checked; 
     }
 
     private void On_Noten_Click(object sender, EventArgs e)
@@ -138,8 +140,11 @@ namespace SchoolManager
     private void OnClickInfo_best(object sender, EventArgs e)
     {
 
-      string query = "Update Noten set Info_best = 0 where ID = @value1";
-      var Value1 = Schüler.Ben_id;
+      //string query = "Update Noten set Info_best = 1 where ID = @value1";
+      int Value1 = Schüler.Ben_id;
+      Schüler.Info_Checked = Info_Chb.Checked;
+      int CheckStatus = Schüler.Info_Checked ? 1 : 0;
+      string query = "Update Noten set Info_best = " + CheckStatus.ToString() + " where ID = @value1";
       using (OleDbConnection connection = new OleDbConnection(Program.connectionString))
       {
         try
@@ -148,6 +153,7 @@ namespace SchoolManager
           using (OleDbCommand command = new OleDbCommand(query, connection))
           {
             command.Parameters.AddWithValue("@Value1", Value1);
+            command.Parameters.AddWithValue("@CheckStatus", CheckStatus);
             int rowsAffected = command.ExecuteNonQuery();
             MessageBox.Show("Note eingefügt", "Akzeptiert", MessageBoxButtons.OK, MessageBoxIcon.Information);
           }

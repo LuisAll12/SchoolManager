@@ -13,10 +13,9 @@ namespace SchoolManager
 {
     public class Benutzer
     {
-        public static int _id;
-        public int Ben_id = _id;
-        
-        public Benutzer(int id) { _id = id; LoadAllSchueler(); LoadAllKlasse(); LoadKlasseStundenplan(); LoadAllNoten(); }
+        private int _id = 0;
+
+    public Benutzer(int id) { _id = id; LoadAllSchueler(); LoadAllKlasse(); LoadKlasseStundenplan(); LoadAllNoten(); }
         //Variabeln Schüler
         public string Username = string.Empty;
         public string Nachname = string.Empty;
@@ -46,13 +45,14 @@ namespace SchoolManager
         public double Info_Not = double.MinValue;
         public double Franz_Not = double.MinValue;
 
+        public int Ben_id { get { return _id; } }
 
-        public void LoadAllSchueler()
+    public void LoadAllSchueler()
         {
             //Herstellung einer Verbindung zwischen C# und Datenbank
             //Öffnet die Ergebnisse Schüler
             string query = "select * from Schueler where SchuelerID = @Value1";
-            var Value1 = _id;
+            var Value1 = Ben_id;
 
             using (OleDbConnection connection = new OleDbConnection(Program.connectionString))
 
@@ -155,7 +155,7 @@ namespace SchoolManager
       //Herstellung einer Verbindung zwischen C# und Datenbank
       //Öffnet die Ergebnisse Schüler
       string query = "select InfoNot, FranzNot, MatheNot, DeuNot from Noten where ID = @Value1";
-      var Value1 = _id;
+      var Value1 = Ben_id;
 
       using (OleDbConnection connection = new OleDbConnection(Program.connectionString))
 
