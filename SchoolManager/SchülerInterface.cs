@@ -128,9 +128,9 @@ namespace SchoolManager
       Note_Info_lbl.Text = user.Info_Not.ToString();
 
       Info_Chb.Checked = user.Info_Checked;
-      Info_Chb.Checked = user.Info_Checked;
-      Info_Chb.Checked = user.Info_Checked;
-      Info_Chb.Checked = user.Info_Checked;
+      Mathe_Chb.Checked = user.Mathe_Checked;
+      Deu_Chb.Checked = user.Deu_Checked;
+      Franz_Chb.Checked = user.Franz_Checked;
     }
 
     private void On_Noten_Click(object sender, EventArgs e)

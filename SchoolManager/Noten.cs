@@ -71,8 +71,8 @@ namespace SchoolManager
 
     }
     private void InsertintoFach(double Note, int Id, string Fach)
-    {
-      string queryFach = "update Noten set Anz"+ Fach + "Not = Anz"+ Fach + "Not + 1, Sum"+ Fach + "Not = Sum"+ Fach +"Not + @Value1 where ID = @Value2";
+    {                     //update Noten sez AnzMatheNot = AnzMatheNot+1,SumMatheNot = SumMatheNot + ~@Value1~ where ID = ~@Value2~
+      string queryFach = "update Noten set Anz"+ Fach + "Not = Anz"+ Fach + "Not + 1, Sum"+ Fach + "Not = Sum"+ Fach +"Not + @Value1, "+Fach+"_best = 0 where ID = @Value2";
       var Value1 = Note;
       var Value2 = Id;
       using (OleDbConnection connection = new OleDbConnection(Program.connectionString))
