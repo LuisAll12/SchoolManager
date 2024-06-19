@@ -14,7 +14,7 @@ namespace SchoolManager
 {
     public partial class SchuelerInterface : Form
     {
-          public Benutzer Id;
+          public Benutzer Schüler;
 
         public SchuelerInterface(Benutzer user)
         {
@@ -34,7 +34,7 @@ namespace SchoolManager
             Noten_table.Hide();
             LoadStundenplan(user);
             LoadAllNote_Interface(user);
-            Id = user;
+            Schüler = user;
         }
 
 
@@ -138,8 +138,8 @@ namespace SchoolManager
     private void OnClickInfo_best(object sender, EventArgs e)
     {
 
-      string query = "Update Noten set Info_best = 1 where ID = @value1";
-      var Value1 = Id;
+      string query = "Update Noten set Info_best = 0 where ID = @value1";
+      var Value1 = Schüler.Ben_id;
       using (OleDbConnection connection = new OleDbConnection(Program.connectionString))
       {
         try

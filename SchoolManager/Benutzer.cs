@@ -14,6 +14,8 @@ namespace SchoolManager
     public class Benutzer
     {
         public static int _id;
+        public int Ben_id = _id;
+        
         public Benutzer(int id) { _id = id; LoadAllSchueler(); LoadAllKlasse(); LoadKlasseStundenplan(); LoadAllNoten(); }
         //Variabeln Schüler
         public string Username = string.Empty;
