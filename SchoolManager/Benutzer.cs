@@ -44,7 +44,11 @@ namespace SchoolManager
         public double Deu_Not = double.MinValue;
         public double Info_Not = double.MinValue;
         public double Franz_Not = double.MinValue;
+
         public bool Info_Checked;
+        public bool Mathe_Checked;
+        public bool Deu_Checked;
+        public bool Franz_Checked;
 
         public int Ben_id { get { return _id; } }
 
@@ -174,6 +178,9 @@ namespace SchoolManager
           Deu_Not = reader.GetDouble(reader.GetOrdinal("DeuNot"));
 
           Info_Checked = reader.GetBoolean(reader.GetOrdinal("Info_best"));
+          Mathe_Checked = reader.GetBoolean(reader.GetOrdinal("Mathe_best"));
+          Deu_Checked = reader.GetBoolean(reader.GetOrdinal("Deu_best"));
+          Franz_Checked = reader.GetBoolean(reader.GetOrdinal("Franz_best"));
         }
         reader.Close();
         connection.Close();

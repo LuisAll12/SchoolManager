@@ -128,6 +128,9 @@ namespace SchoolManager
       Note_Info_lbl.Text = user.Info_Not.ToString();
 
       Info_Chb.Checked = user.Info_Checked;
+      Info_Chb.Checked = user.Info_Checked;
+      Info_Chb.Checked = user.Info_Checked;
+      Info_Chb.Checked = user.Info_Checked;
     }
 
     private void On_Noten_Click(object sender, EventArgs e)
@@ -163,12 +166,101 @@ namespace SchoolManager
           MessageBox.Show("Konnte nicht ausgeführt werden", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
       }
+    }
+      private void OnClickMathe_best(object sender, EventArgs e)
+      {
+
+        //string query = "Update Noten set Info_best = 1 where ID = @value1";
+        int Value1 = Schüler.Ben_id;
+        Schüler.Mathe_Checked = Mathe_Chb.Checked;
+        int CheckStatus = Schüler.Mathe_Checked ? 1 : 0;
+        string query = "Update Noten set Mathe_best = " + CheckStatus.ToString() + " where ID = @value1";
+
+        using (OleDbConnection connection = new OleDbConnection(Program.connectionString))
+        {
+          try
+          {
+            connection.Open();
+            using (OleDbCommand command = new OleDbCommand(query, connection))
+            {
+              command.Parameters.AddWithValue("@Value1", Value1);
+              command.Parameters.AddWithValue("@CheckStatus", CheckStatus);
+              int rowsAffected = command.ExecuteNonQuery();
+              if (rowsAffected > 0) MessageBox.Show("Note bestätigt", "Bestätigt", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+          }
+          catch (Exception ex)
+          {
+            MessageBox.Show("Konnte nicht ausgeführt werden", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+          }
+        }
 
 
+      }
+    private void OnClickDeu_best(object sender, EventArgs e)
+    {
+
+      //string query = "Update Noten set Info_best = 1 where ID = @value1";
+      int Value1 = Schüler.Ben_id;
+      Schüler.Deu_Checked = Deu_Chb.Checked;
+      int CheckStatus = Schüler.Deu_Checked ? 1 : 0;
+      string query = "Update Noten set Deu_best = " + CheckStatus.ToString() + " where ID = @value1";
+
+      using (OleDbConnection connection = new OleDbConnection(Program.connectionString))
+      {
+        try
+        {
+          connection.Open();
+          using (OleDbCommand command = new OleDbCommand(query, connection))
+          {
+            command.Parameters.AddWithValue("@Value1", Value1);
+            command.Parameters.AddWithValue("@CheckStatus", CheckStatus);
+            int rowsAffected = command.ExecuteNonQuery();
+            if (rowsAffected > 0) MessageBox.Show("Note bestätigt", "Bestätigt", MessageBoxButtons.OK, MessageBoxIcon.Information);
+          }
+        }
+        catch (Exception ex)
+        {
+          MessageBox.Show("Konnte nicht ausgeführt werden", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+      }
 
 
+    }
+    private void OnClickFranz_best(object sender, EventArgs e)
+    {
+
+      //string query = "Update Noten set Info_best = 1 where ID = @value1";
+      int Value1 = Schüler.Ben_id;
+      Schüler.Franz_Checked = Franz_Chb.Checked;
+      int CheckStatus = Schüler.Franz_Checked ? 1 : 0;
+      string query = "Update Noten set Franz_best = " + CheckStatus.ToString() + " where ID = @value1";
+
+      using (OleDbConnection connection = new OleDbConnection(Program.connectionString))
+      {
+        try
+        {
+          connection.Open();
+          using (OleDbCommand command = new OleDbCommand(query, connection))
+          {
+            command.Parameters.AddWithValue("@Value1", Value1);
+            command.Parameters.AddWithValue("@CheckStatus", CheckStatus);
+            int rowsAffected = command.ExecuteNonQuery();
+            if (rowsAffected > 0) MessageBox.Show("Note bestätigt", "Bestätigt", MessageBoxButtons.OK, MessageBoxIcon.Information);
+          }
+        }
+        catch (Exception ex)
+        {
+          MessageBox.Show("Konnte nicht ausgeführt werden", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+      }
 
 
+    }
+
+
+    private void Noten_table_Paint(object sender, PaintEventArgs e)
+    {
 
     }
     //(IchTable) Informationen
