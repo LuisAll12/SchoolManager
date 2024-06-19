@@ -44,6 +44,7 @@ namespace SchoolManager
         public double Deu_Not = double.MinValue;
         public double Info_Not = double.MinValue;
         public double Franz_Not = double.MinValue;
+        public bool Info_Checked;
 
         public int Ben_id { get { return _id; } }
 
@@ -154,7 +155,7 @@ namespace SchoolManager
     {
       //Herstellung einer Verbindung zwischen C# und Datenbank
       //Öffnet die Ergebnisse Schüler
-      string query = "select InfoNot, FranzNot, MatheNot, DeuNot from Noten where ID = @Value1";
+      string query = "select * from Noten where ID = @Value1";
       var Value1 = Ben_id;
 
       using (OleDbConnection connection = new OleDbConnection(Program.connectionString))
@@ -171,6 +172,8 @@ namespace SchoolManager
           Mathe_Not = reader.GetDouble(reader.GetOrdinal("MatheNot"));
           Franz_Not = reader.GetDouble(reader.GetOrdinal("FranzNot"));
           Deu_Not = reader.GetDouble(reader.GetOrdinal("DeuNot"));
+
+          Info_Checked = reader.GetBoolean(reader.GetOrdinal("Info_best"));
         }
         reader.Close();
         connection.Close();

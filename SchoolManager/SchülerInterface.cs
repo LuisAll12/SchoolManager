@@ -127,7 +127,7 @@ namespace SchoolManager
       Note_Franz_lbl.Text = user.Franz_Not.ToString();
       Note_Info_lbl.Text = user.Info_Not.ToString();
 
-      Info_Chb.Checked = user.Info_Checked; 
+      Info_Chb.Checked = user.Info_Checked;
     }
 
     private void On_Noten_Click(object sender, EventArgs e)
@@ -155,7 +155,7 @@ namespace SchoolManager
             command.Parameters.AddWithValue("@Value1", Value1);
             command.Parameters.AddWithValue("@CheckStatus", CheckStatus);
             int rowsAffected = command.ExecuteNonQuery();
-            MessageBox.Show("Note eingefügt", "Akzeptiert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (rowsAffected > 0) MessageBox.Show("Note bestätigt", "Bestätigt", MessageBoxButtons.OK, MessageBoxIcon.Information);
           }
         }
         catch (Exception ex)
